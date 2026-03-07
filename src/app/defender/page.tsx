@@ -610,6 +610,166 @@ export default function DefenderPage() {
         </div>
       </section>
 
+      
+      {/* Trim Comparison Table */}
+      <section className="py-16 lg:py-20 bg-cream">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-display text-charcoal mb-4 text-center">
+            2026 Land Rover Defender Trim Comparison
+          </h2>
+          <p className="text-slate text-center mb-10 max-w-2xl mx-auto">
+            Compare specifications and standard equipment across all 2026 Land Rover Defender trim levels. All body styles (90/110/130) available across trims. Prices shown for Defender 110.
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b-2 border-sand/40">
+                  <th className="text-left py-4 px-4 text-xs uppercase tracking-wider text-slate font-semibold min-w-[160px]">Feature</th>
+                  <th className="text-center py-4 px-3 text-xs uppercase tracking-wider text-slate font-semibold min-w-[120px]">Defender</th>
+                  <th className="text-center py-4 px-3 text-xs uppercase tracking-wider text-slate font-semibold min-w-[120px]">S</th>
+                  <th className="text-center py-4 px-3 text-xs uppercase tracking-wider text-slate font-semibold min-w-[120px]">X-Dynamic SE</th>
+                  <th className="text-center py-4 px-3 text-xs uppercase tracking-wider text-slate font-semibold min-w-[120px]">X-Dynamic HSE</th>
+                  <th className="text-center py-4 px-3 text-xs uppercase tracking-wider text-slate font-semibold min-w-[120px]">X</th>
+                  <th className="text-center py-4 px-3 text-xs uppercase tracking-wider text-slate font-semibold min-w-[120px]">V8</th>
+                  <th className="text-center py-4 px-3 text-xs uppercase tracking-wider text-slate font-semibold min-w-[120px]">OCTA</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b-2 border-sand/30 bg-racing-green/5">
+                  <td className="py-4 px-4 font-semibold text-charcoal">Starting Price</td>
+                  <td className="py-4 px-3 text-center font-bold text-sand">£55,000</td>
+                  <td className="py-4 px-3 text-center font-bold text-sand">£58,500</td>
+                  <td className="py-4 px-3 text-center font-bold text-sand">£63,000</td>
+                  <td className="py-4 px-3 text-center font-bold text-sand">£70,000</td>
+                  <td className="py-4 px-3 text-center font-bold text-sand">£82,000</td>
+                  <td className="py-4 px-3 text-center font-bold text-sand">£98,000</td>
+                  <td className="py-4 px-3 text-center font-bold text-sand">£145,300</td>
+                </tr>
+                <tr className="border-b border-sand/20">
+                  <td className="py-3 px-4 text-sm text-charcoal font-medium">Alloy Wheels</td>
+                  <td className="py-3 px-3 text-center text-sm text-charcoal">18"</td>
+                  <td className="py-3 px-3 text-center text-sm text-charcoal">19"</td>
+                  <td className="py-3 px-3 text-center text-sm text-charcoal">20"</td>
+                  <td className="py-3 px-3 text-center text-sm text-charcoal">20"</td>
+                  <td className="py-3 px-3 text-center text-sm text-charcoal">22"</td>
+                  <td className="py-3 px-3 text-center text-sm text-charcoal">22"</td>
+                  <td className="py-3 px-3 text-center text-sm text-charcoal">22"</td>
+                </tr>
+                <tr className="border-b border-sand/20 bg-white/50">
+                  <td className="py-3 px-4 text-sm text-charcoal font-medium">LED Headlights</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sm text-charcoal">Matrix</td>
+                  <td className="py-3 px-3 text-center text-sm text-charcoal">Matrix</td>
+                  <td className="py-3 px-3 text-center text-sm text-charcoal">Matrix</td>
+                </tr>
+                <tr className="border-b border-sand/20">
+                  <td className="py-3 px-4 text-sm text-charcoal font-medium">Pivi Pro Infotainment</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                </tr>
+                <tr className="border-b border-sand/20 bg-white/50">
+                  <td className="py-3 px-4 text-sm text-charcoal font-medium">Interior</td>
+                  <td className="py-3 px-3 text-center text-sm text-charcoal">Resist</td>
+                  <td className="py-3 px-3 text-center text-sm text-charcoal">Grained Leather</td>
+                  <td className="py-3 px-3 text-center text-sm text-charcoal">Grained Leather</td>
+                  <td className="py-3 px-3 text-center text-sm text-charcoal">Windsor</td>
+                  <td className="py-3 px-3 text-center text-sm text-charcoal">Windsor</td>
+                  <td className="py-3 px-3 text-center text-sm text-charcoal">SV Bespoke</td>
+                  <td className="py-3 px-3 text-center text-sm text-charcoal">OCTA Bespoke</td>
+                </tr>
+                <tr className="border-b border-sand/20">
+                  <td className="py-3 px-4 text-sm text-charcoal font-medium">Heated Front Seats</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                </tr>
+                <tr className="border-b border-sand/20 bg-white/50">
+                  <td className="py-3 px-4 text-sm text-charcoal font-medium">Heated Rear Seats</td>
+                  <td className="py-3 px-3 text-center text-slate/30">&mdash;</td>
+                  <td className="py-3 px-3 text-center text-slate/30">&mdash;</td>
+                  <td className="py-3 px-3 text-center text-slate/30">&mdash;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                </tr>
+                <tr className="border-b border-sand/20">
+                  <td className="py-3 px-4 text-sm text-charcoal font-medium">Terrain Response 2</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                </tr>
+                <tr className="border-b border-sand/20 bg-white/50">
+                  <td className="py-3 px-4 text-sm text-charcoal font-medium">Air Suspension</td>
+                  <td className="py-3 px-3 text-center text-slate/30">&mdash;</td>
+                  <td className="py-3 px-3 text-center text-slate/30">&mdash;</td>
+                  <td className="py-3 px-3 text-center text-slate/30">&mdash;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sm text-charcoal">6D Dynamics</td>
+                </tr>
+                <tr className="border-b border-sand/20">
+                  <td className="py-3 px-4 text-sm text-charcoal font-medium">Meridian Sound</td>
+                  <td className="py-3 px-3 text-center text-sm text-charcoal">Standard</td>
+                  <td className="py-3 px-3 text-center text-sm text-charcoal">Standard</td>
+                  <td className="py-3 px-3 text-center text-sm text-charcoal">Surround</td>
+                  <td className="py-3 px-3 text-center text-sm text-charcoal">Surround</td>
+                  <td className="py-3 px-3 text-center text-sm text-charcoal">Surround</td>
+                  <td className="py-3 px-3 text-center text-sm text-charcoal">Surround</td>
+                  <td className="py-3 px-3 text-center text-sm text-charcoal">Surround</td>
+                </tr>
+                <tr className="border-b border-sand/20 bg-white/50">
+                  <td className="py-3 px-4 text-sm text-charcoal font-medium">ClearSight Mirror</td>
+                  <td className="py-3 px-3 text-center text-slate/30">&mdash;</td>
+                  <td className="py-3 px-3 text-center text-slate/30">&mdash;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                </tr>
+                <tr className="border-b border-sand/20">
+                  <td className="py-3 px-4 text-sm text-charcoal font-medium">Configurable Ambient Lighting</td>
+                  <td className="py-3 px-3 text-center text-slate/30">&mdash;</td>
+                  <td className="py-3 px-3 text-center text-slate/30">&mdash;</td>
+                  <td className="py-3 px-3 text-center text-slate/30">&mdash;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                </tr>
+                <tr className="border-b border-sand/20 bg-white/50">
+                  <td className="py-3 px-4 text-sm text-charcoal font-medium">Head-Up Display</td>
+                  <td className="py-3 px-3 text-center text-slate/30">&mdash;</td>
+                  <td className="py-3 px-3 text-center text-slate/30">&mdash;</td>
+                  <td className="py-3 px-3 text-center text-slate/30">&mdash;</td>
+                  <td className="py-3 px-3 text-center text-slate/30">&mdash;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
       {/* Finance Comparison Table */}
       <section className="py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -835,6 +995,150 @@ export default function DefenderPage() {
         </div>
       </section>
 
+      
+      {/* Expert Reviews */}
+      <section className="py-16 lg:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-display text-charcoal mb-4 text-center">
+            What the Experts Say About the 2026 Land Rover Defender
+          </h2>
+          <p className="text-slate text-center mb-10 max-w-2xl mx-auto">
+            Independent reviews from the UK&apos;s most trusted automotive journalists.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-cream rounded-xl p-6 border border-sand/30">
+              <div className="flex items-center justify-between mb-3">
+                <span className="font-display text-racing-green text-lg">What Car?</span>
+                <span className="text-sand font-bold text-lg">5/5</span>
+              </div>
+              <p className="text-slate text-sm leading-relaxed mb-4">
+                &ldquo;Premium SUV of the Year 2026. A very versatile SUV that's stylish, practical and plush, available in a variety of body styles to cater for different needs.&rdquo;
+              </p>
+              <a
+                href="https://www.whatcar.com/land-rover/defender/4x4/review/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sand text-sm font-semibold hover:underline"
+              >
+                Read full review &rarr;
+              </a>
+            </div>
+            <div className="bg-cream rounded-xl p-6 border border-sand/30">
+              <div className="flex items-center justify-between mb-3">
+                <span className="font-display text-racing-green text-lg">Top Gear</span>
+                <span className="text-sand font-bold text-lg">9/10</span>
+              </div>
+              <p className="text-slate text-sm leading-relaxed mb-4">
+                &ldquo;Top Gear Car of the Year. One of the most desirable vehicles on the market, combining unstoppable off-road capability with contemporary luxury.&rdquo;
+              </p>
+              <a
+                href="https://www.topgear.com/car-reviews/land-rover/defender"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sand text-sm font-semibold hover:underline"
+              >
+                Read full review &rarr;
+              </a>
+            </div>
+            <div className="bg-cream rounded-xl p-6 border border-sand/30">
+              <div className="flex items-center justify-between mb-3">
+                <span className="font-display text-racing-green text-lg">Car Magazine</span>
+                <span className="text-sand font-bold text-lg">4.5/5</span>
+              </div>
+              <p className="text-slate text-sm leading-relaxed mb-4">
+                &ldquo;Still the best 4x4 by far? The Defender has become one of the most desirable vehicles on the market, with some models actually appreciating in value.&rdquo;
+              </p>
+              <a
+                href="https://www.carmagazine.co.uk/car-reviews/land-rover/defender-4x4/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sand text-sm font-semibold hover:underline"
+              >
+                Read full review &rarr;
+              </a>
+            </div>
+            <div className="bg-cream rounded-xl p-6 border border-sand/30">
+              <div className="flex items-center justify-between mb-3">
+                <span className="font-display text-racing-green text-lg">Carwow</span>
+                <span className="text-sand font-bold text-lg">9/10</span>
+              </div>
+              <p className="text-slate text-sm leading-relaxed mb-4">
+                &ldquo;For family buyers and off-road enthusiasts alike, the Defender 110 is just about unbeatable. The OCTA with 635 PS V8 does 0-60 in 3.8 seconds.&rdquo;
+              </p>
+              <a
+                href="https://www.carwow.co.uk/land-rover/defender-110"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sand text-sm font-semibold hover:underline"
+              >
+                Read full review &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Video Reviews */}
+      <section className="py-16 lg:py-20 bg-cream">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-display text-charcoal mb-4 text-center">
+            Watch Land Rover Defender Reviews
+          </h2>
+          <p className="text-slate text-center mb-10 max-w-2xl mx-auto">
+            In-depth video reviews from leading automotive channels to help you decide.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <a
+              href="https://www.youtube.com/results?search_query=carwow+land+rover+defender+review+2024"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 bg-cream rounded-xl p-5 border border-sand/30 hover:border-sand transition-colors group"
+            >
+              <div className="w-12 h-12 bg-racing-green rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg className="w-6 h-6 text-sand" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+              <div>
+                <p className="text-charcoal font-semibold group-hover:text-sand transition-colors">Land Rover Defender Review</p>
+                <p className="text-slate text-sm">Carwow</p>
+              </div>
+            </a>
+            <a
+              href="https://www.youtube.com/results?search_query=what+car+land+rover+defender+review+2024"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 bg-cream rounded-xl p-5 border border-sand/30 hover:border-sand transition-colors group"
+            >
+              <div className="w-12 h-12 bg-racing-green rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg className="w-6 h-6 text-sand" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+              <div>
+                <p className="text-charcoal font-semibold group-hover:text-sand transition-colors">Defender - Best Off-Road SUV?</p>
+                <p className="text-slate text-sm">What Car?</p>
+              </div>
+            </a>
+            <a
+              href="https://www.youtube.com/results?search_query=top+gear+defender+octa+review"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 bg-cream rounded-xl p-5 border border-sand/30 hover:border-sand transition-colors group"
+            >
+              <div className="w-12 h-12 bg-racing-green rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg className="w-6 h-6 text-sand" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+              <div>
+                <p className="text-charcoal font-semibold group-hover:text-sand transition-colors">Defender OCTA Review</p>
+                <p className="text-slate text-sm">Top Gear</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
       {/* FAQs */}
       <FAQSection title={`2026 ${model.fullName} Finance FAQs`} faqs={faqs} />
 

@@ -460,6 +460,138 @@ export default function RangeRoverSportPage() {
         </div>
       </section>
 
+      
+      {/* Trim Comparison Table */}
+      <section className="py-16 lg:py-20 bg-cream">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-display text-charcoal mb-4 text-center">
+            2026 Range Rover Sport Trim Comparison
+          </h2>
+          <p className="text-slate text-center mb-10 max-w-2xl mx-auto">
+            Compare specifications and standard equipment across all 2026 Range Rover Sport trim levels. All trims available with all engine options.
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b-2 border-sand/40">
+                  <th className="text-left py-4 px-4 text-xs uppercase tracking-wider text-slate font-semibold min-w-[160px]">Feature</th>
+                  <th className="text-center py-4 px-3 text-xs uppercase tracking-wider text-slate font-semibold min-w-[120px]">Dynamic SE</th>
+                  <th className="text-center py-4 px-3 text-xs uppercase tracking-wider text-slate font-semibold min-w-[120px]">Dynamic HSE</th>
+                  <th className="text-center py-4 px-3 text-xs uppercase tracking-wider text-slate font-semibold min-w-[120px]">Autobiography</th>
+                  <th className="text-center py-4 px-3 text-xs uppercase tracking-wider text-slate font-semibold min-w-[120px]">SV</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b-2 border-sand/30 bg-racing-green/5">
+                  <td className="py-4 px-4 font-semibold text-charcoal">Starting Price</td>
+                  <td className="py-4 px-3 text-center font-bold text-sand">£79,500</td>
+                  <td className="py-4 px-3 text-center font-bold text-sand">£88,000</td>
+                  <td className="py-4 px-3 text-center font-bold text-sand">£105,000</td>
+                  <td className="py-4 px-3 text-center font-bold text-sand">£125,000</td>
+                </tr>
+                <tr className="border-b border-sand/20">
+                  <td className="py-3 px-4 text-sm text-charcoal font-medium">21" Alloy Wheels</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sm text-charcoal">22"</td>
+                  <td className="py-3 px-3 text-center text-sm text-charcoal">23"</td>
+                </tr>
+                <tr className="border-b border-sand/20 bg-white/50">
+                  <td className="py-3 px-4 text-sm text-charcoal font-medium">Electronic Air Suspension</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sm text-charcoal">SV Tuned</td>
+                </tr>
+                <tr className="border-b border-sand/20">
+                  <td className="py-3 px-4 text-sm text-charcoal font-medium">Meridian Sound System</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sm text-charcoal">Surround</td>
+                  <td className="py-3 px-3 text-center text-sm text-charcoal">Signature 1,430W</td>
+                  <td className="py-3 px-3 text-center text-sm text-charcoal">Signature 1,430W</td>
+                </tr>
+                <tr className="border-b border-sand/20 bg-white/50">
+                  <td className="py-3 px-4 text-sm text-charcoal font-medium">Pivi Pro Infotainment</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                </tr>
+                <tr className="border-b border-sand/20">
+                  <td className="py-3 px-4 text-sm text-charcoal font-medium">Leather Interior</td>
+                  <td className="py-3 px-3 text-center text-sm text-charcoal">Standard</td>
+                  <td className="py-3 px-3 text-center text-sm text-charcoal">Windsor</td>
+                  <td className="py-3 px-3 text-center text-sm text-charcoal">Semi-Aniline</td>
+                  <td className="py-3 px-3 text-center text-sm text-charcoal">SV Bespoke</td>
+                </tr>
+                <tr className="border-b border-sand/20 bg-white/50">
+                  <td className="py-3 px-4 text-sm text-charcoal font-medium">Heated Front Seats</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                </tr>
+                <tr className="border-b border-sand/20">
+                  <td className="py-3 px-4 text-sm text-charcoal font-medium">Heated Rear Seats</td>
+                  <td className="py-3 px-3 text-center text-slate/30">&mdash;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                </tr>
+                <tr className="border-b border-sand/20 bg-white/50">
+                  <td className="py-3 px-4 text-sm text-charcoal font-medium">Head-Up Display</td>
+                  <td className="py-3 px-3 text-center text-slate/30">&mdash;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                </tr>
+                <tr className="border-b border-sand/20">
+                  <td className="py-3 px-4 text-sm text-charcoal font-medium">Adaptive Dynamics</td>
+                  <td className="py-3 px-3 text-center text-slate/30">&mdash;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                </tr>
+                <tr className="border-b border-sand/20 bg-white/50">
+                  <td className="py-3 px-4 text-sm text-charcoal font-medium">Soft-Close Doors</td>
+                  <td className="py-3 px-3 text-center text-slate/30">&mdash;</td>
+                  <td className="py-3 px-3 text-center text-slate/30">&mdash;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                </tr>
+                <tr className="border-b border-sand/20">
+                  <td className="py-3 px-4 text-sm text-charcoal font-medium">4-Zone Climate Control</td>
+                  <td className="py-3 px-3 text-center text-slate/30">&mdash;</td>
+                  <td className="py-3 px-3 text-center text-slate/30">&mdash;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                </tr>
+                <tr className="border-b border-sand/20 bg-white/50">
+                  <td className="py-3 px-4 text-sm text-charcoal font-medium">Configurable Ambient Lighting</td>
+                  <td className="py-3 px-3 text-center text-slate/30">&mdash;</td>
+                  <td className="py-3 px-3 text-center text-slate/30">&mdash;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                </tr>
+                <tr className="border-b border-sand/20">
+                  <td className="py-3 px-4 text-sm text-charcoal font-medium">Carbon Fibre Exterior Trim</td>
+                  <td className="py-3 px-3 text-center text-slate/30">&mdash;</td>
+                  <td className="py-3 px-3 text-center text-slate/30">&mdash;</td>
+                  <td className="py-3 px-3 text-center text-slate/30">&mdash;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                </tr>
+                <tr className="border-b border-sand/20 bg-white/50">
+                  <td className="py-3 px-4 text-sm text-charcoal font-medium">SV-Specific Styling</td>
+                  <td className="py-3 px-3 text-center text-slate/30">&mdash;</td>
+                  <td className="py-3 px-3 text-center text-slate/30">&mdash;</td>
+                  <td className="py-3 px-3 text-center text-slate/30">&mdash;</td>
+                  <td className="py-3 px-3 text-center text-sand text-lg">&#10003;</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
       {/* Finance Comparison Table */}
       <section className="py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -712,6 +844,150 @@ export default function RangeRoverSportPage() {
         </div>
       </section>
 
+      
+      {/* Expert Reviews */}
+      <section className="py-16 lg:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-display text-charcoal mb-4 text-center">
+            What the Experts Say About the 2026 Range Rover Sport
+          </h2>
+          <p className="text-slate text-center mb-10 max-w-2xl mx-auto">
+            Independent reviews from the UK&apos;s most trusted automotive journalists.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-cream rounded-xl p-6 border border-sand/30">
+              <div className="flex items-center justify-between mb-3">
+                <span className="font-display text-racing-green text-lg">What Car?</span>
+                <span className="text-sand font-bold text-lg">4/5</span>
+              </div>
+              <p className="text-slate text-sm leading-relaxed mb-4">
+                &ldquo;A fantastic SUV that goes big on luxury, comfort and off-road ability. The P460e PHEV offers up to 72 miles of electric range, which is excellent for the class.&rdquo;
+              </p>
+              <a
+                href="https://www.whatcar.com/land-rover/range-rover-sport/4x4/review/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sand text-sm font-semibold hover:underline"
+              >
+                Read full review &rarr;
+              </a>
+            </div>
+            <div className="bg-cream rounded-xl p-6 border border-sand/30">
+              <div className="flex items-center justify-between mb-3">
+                <span className="font-display text-racing-green text-lg">Autocar</span>
+                <span className="text-sand font-bold text-lg">4/5</span>
+              </div>
+              <p className="text-slate text-sm leading-relaxed mb-4">
+                &ldquo;Ready to drive Land Rover forward and bring new buyers into the fold, while maintaining the integrity of the Range Rover brand.&rdquo;
+              </p>
+              <a
+                href="https://www.autocar.co.uk/car-review/land-rover/range-rover-sport"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sand text-sm font-semibold hover:underline"
+              >
+                Read full review &rarr;
+              </a>
+            </div>
+            <div className="bg-cream rounded-xl p-6 border border-sand/30">
+              <div className="flex items-center justify-between mb-3">
+                <span className="font-display text-racing-green text-lg">Top Gear</span>
+                <span className="text-sand font-bold text-lg">8/10</span>
+              </div>
+              <p className="text-slate text-sm leading-relaxed mb-4">
+                &ldquo;It shares its aluminium chassis and engines with the big Range Rover, but features sharper suspension for more back-road fun. One of the quietest cars in its class.&rdquo;
+              </p>
+              <a
+                href="https://www.topgear.com/car-reviews/land-rover/range-rover-sport"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sand text-sm font-semibold hover:underline"
+              >
+                Read full review &rarr;
+              </a>
+            </div>
+            <div className="bg-cream rounded-xl p-6 border border-sand/30">
+              <div className="flex items-center justify-between mb-3">
+                <span className="font-display text-racing-green text-lg">Carwow</span>
+                <span className="text-sand font-bold text-lg">8/10</span>
+              </div>
+              <p className="text-slate text-sm leading-relaxed mb-4">
+                &ldquo;If you want speedy luxury and off-road prowess, the Range Rover Sport delivers. The SV with its 635 PS V8 is the performance halo of the lineup.&rdquo;
+              </p>
+              <a
+                href="https://www.carwow.co.uk/land-rover/range-rover-sport"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sand text-sm font-semibold hover:underline"
+              >
+                Read full review &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Video Reviews */}
+      <section className="py-16 lg:py-20 bg-cream">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-display text-charcoal mb-4 text-center">
+            Watch Range Rover Sport Reviews
+          </h2>
+          <p className="text-slate text-center mb-10 max-w-2xl mx-auto">
+            In-depth video reviews from leading automotive channels to help you decide.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <a
+              href="https://www.youtube.com/results?search_query=carwow+range+rover+sport+review+2024"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 bg-cream rounded-xl p-5 border border-sand/30 hover:border-sand transition-colors group"
+            >
+              <div className="w-12 h-12 bg-racing-green rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg className="w-6 h-6 text-sand" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+              <div>
+                <p className="text-charcoal font-semibold group-hover:text-sand transition-colors">Range Rover Sport Full Review</p>
+                <p className="text-slate text-sm">Carwow</p>
+              </div>
+            </a>
+            <a
+              href="https://www.youtube.com/results?search_query=what+car+range+rover+sport+review+2024"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 bg-cream rounded-xl p-5 border border-sand/30 hover:border-sand transition-colors group"
+            >
+              <div className="w-12 h-12 bg-racing-green rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg className="w-6 h-6 text-sand" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+              <div>
+                <p className="text-charcoal font-semibold group-hover:text-sand transition-colors">Range Rover Sport - Worth the Money?</p>
+                <p className="text-slate text-sm">What Car?</p>
+              </div>
+            </a>
+            <a
+              href="https://www.youtube.com/results?search_query=top+gear+range+rover+sport+sv+review"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 bg-cream rounded-xl p-5 border border-sand/30 hover:border-sand transition-colors group"
+            >
+              <div className="w-12 h-12 bg-racing-green rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg className="w-6 h-6 text-sand" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+              <div>
+                <p className="text-charcoal font-semibold group-hover:text-sand transition-colors">Range Rover Sport SV Review</p>
+                <p className="text-slate text-sm">Top Gear</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
       {/* FAQs */}
       <FAQSection title={`2026 ${model.name} Finance FAQs`} faqs={faqs} />
 
