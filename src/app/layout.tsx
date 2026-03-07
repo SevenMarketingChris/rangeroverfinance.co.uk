@@ -9,6 +9,10 @@ export const metadata: Metadata = {
     "Compare Range Rover finance deals including PCP, HP and lease options. Free finance calculator for Range Rover, Sport, Evoque, Velar, Discovery and Defender.",
   keywords:
     "range rover finance, range rover pcp, range rover lease, range rover hp, land rover finance, range rover monthly payments",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
