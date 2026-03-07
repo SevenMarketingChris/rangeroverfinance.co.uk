@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  /* Modern Range Rover palette - minimalist, monochromatic with subtle warmth */
+  --color-rr-black: #1a1a1a;
+  --color-rr-black-light: #2d2d2d;
+  --color-rr-graphite: #3d3d3d;
+  --color-rr-gunmetal: #4a4f54;
+  --color-rr-silver: #8a8f94;
+  --color-rr-pewter: #b8bcc0;
+  --color-rr-mist: #e8e9eb;
+  --color-rr-frost: #f4f5f6;
+  --color-rr-white: #fafafa;
+  --color-rr-accent: #c4a265;
+  --color-rr-accent-light: #d4b87d;
+  --color-rr-accent-muted: #c4a26515;
+
+  /* Legacy aliases for components already using old names */
+  --color-racing-green: #1a1a1a;
+  --color-racing-green-light: #2d2d2d;
+  --color-racing-green-dark: #111111;
+  --color-sand: #c4a265;
+  --color-sand-light: #d4b87d;
+  --color-sand-dark: #a6884d;
+  --color-cream: #f4f5f6;
+  --color-cream-dark: #e8e9eb;
+  --color-charcoal: #1a1a1a;
+  --color-charcoal-light: #3d3d3d;
+  --color-slate: #8a8f94;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Modern Range Rover-style slider */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 2px;
+  background: var(--color-rr-mist);
+  border-radius: 0;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 0;
+  background: var(--color-rr-black);
+  cursor: pointer;
+  border: 2px solid var(--color-rr-white);
+  box-shadow: 0 0 0 1px var(--color-rr-black);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 0;
+  background: var(--color-rr-black);
+  cursor: pointer;
+  border: 2px solid var(--color-rr-white);
+  box-shadow: 0 0 0 1px var(--color-rr-black);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-rr-frost);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-rr-pewter);
+}
