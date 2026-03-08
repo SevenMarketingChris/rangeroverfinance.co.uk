@@ -75,6 +75,10 @@ export default function RangeRoverSportPage() {
                 <p className="text-2xl font-bold text-sand">{formatCurrency(model.typicalMonthly)}/mo</p>
               </div>
               <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                <p className="text-sm text-white/60 uppercase tracking-wider">Deposit</p>
+                <p className="text-2xl font-bold text-white">{formatCurrency(model.typicalDeposit)}</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
                 <p className="text-sm text-white/60 uppercase tracking-wider">Typical APR</p>
                 <p className="text-2xl font-bold text-white">{model.typicalApr}%</p>
               </div>
@@ -83,6 +87,9 @@ export default function RangeRoverSportPage() {
                 <p className="text-2xl font-bold text-white">From 3.8s</p>
               </div>
             </div>
+            <p className="mt-3 text-xs text-white/50">
+              Representative example: {formatCurrency(model.typicalMonthly)}/mo with {formatCurrency(model.typicalDeposit)} deposit, {model.typicalTerm} months at {model.typicalApr}% APR. Finance subject to status.
+            </p>
           </div>
         </div>
       </section>
