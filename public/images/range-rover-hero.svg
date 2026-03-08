@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" fill="none">
+  <!-- Range Rover L460 - Front 3/4 View Illustration -->
+
+  <!-- Shadow -->
+  <ellipse cx="400" cy="370" rx="320" ry="18" fill="#0a0a0a" opacity="0.3"/>
+
+  <!-- Body - Main shape -->
+  <path d="M120 240 L130 195 L155 165 L175 150 L200 140 L280 130 L380 125 L500 125 L580 128 L640 135 L680 145 L700 160 L710 180 L715 200 L718 230 L720 260 L720 290 L715 310 L700 325 L680 330 L120 330 L110 320 L105 300 L108 270 Z" fill="#2c2c2c"/>
+
+  <!-- Body highlight -->
+  <path d="M130 240 L140 200 L160 172 L180 158 L205 148 L285 138 L380 133 L500 133 L575 136 L635 143 L670 152 L690 165 L698 182 L702 200 L705 230 L140 230 Z" fill="#3a3a3a"/>
+
+  <!-- Roof -->
+  <path d="M200 140 L215 108 L240 90 L280 80 L380 75 L480 75 L540 78 L570 85 L590 95 L600 110 L610 130 L640 135 L580 128 L500 125 L380 125 L280 130 Z" fill="#2c2c2c"/>
+
+  <!-- Roof highlight -->
+  <path d="M220 108 L245 92 L285 83 L380 78 L475 78 L535 81 L565 88 L583 96 L595 112 L280 105 Z" fill="#363636"/>
+
+  <!-- Windscreen -->
+  <path d="M215 135 L230 108 L250 95 L285 86 L380 82 L470 82 L530 85 L555 90 L575 100 L590 115 L600 130 L590 128 L500 125 L380 125 L280 130 L215 135 Z" fill="#1a3a4a" opacity="0.85"/>
+
+  <!-- Windscreen reflection -->
+  <path d="M260 120 L270 105 L310 95 L380 90 L430 90 L380 92 L310 100 L270 112 Z" fill="#4a7a8a" opacity="0.3"/>
+
+  <!-- Side windows -->
+  <path d="M200 140 L215 135 L280 130 L380 125 L500 125 L580 128 L600 130 L595 135 L580 138 L500 135 L380 135 L280 140 L200 148 Z" fill="#1a3a4a" opacity="0.7"/>
+
+  <!-- Window chrome trim -->
+  <path d="M200 140 L215 135 L280 130 L380 125 L500 125 L580 128 L600 130" stroke="#c4a265" stroke-width="1.2" fill="none" opacity="0.6"/>
+
+  <!-- Front grille area -->
+  <path d="M120 240 L130 195 L155 170 L175 158 L200 150 L200 260 L120 260 Z" fill="#1a1a1a"/>
+
+  <!-- Grille - horizontal bars -->
+  <rect x="132" y="178" width="63" height="3" rx="1" fill="#c4a265" opacity="0.7"/>
+  <rect x="130" y="186" width="65" height="3" rx="1" fill="#c4a265" opacity="0.6"/>
+  <rect x="128" y="194" width="67" height="3" rx="1" fill="#c4a265" opacity="0.5"/>
+  <rect x="126" y="202" width="69" height="3" rx="1" fill="#c4a265" opacity="0.45"/>
+  <rect x="124" y="210" width="71" height="3" rx="1" fill="#c4a265" opacity="0.4"/>
+  <rect x="122" y="218" width="73" height="3" rx="1" fill="#c4a265" opacity="0.35"/>
+  <rect x="121" y="226" width="74" height="3" rx="1" fill="#c4a265" opacity="0.3"/>
+
+  <!-- Front headlight - left/near side -->
+  <path d="M140 165 L175 155 L200 150 L200 168 L175 172 L155 170 Z" fill="#e8e0d0" opacity="0.9"/>
+  <path d="M145 167 L175 158 L195 154 L195 165 L175 169 L155 168 Z" fill="#ffffff" opacity="0.4"/>
+  <!-- DRL signature -->
+  <path d="M150 166 L190 156" stroke="#c4a265" stroke-width="2" opacity="0.8"/>
+
+  <!-- Front bumper -->
+  <path d="M110 260 L200 260 L200 290 L195 310 L180 325 L120 330 L110 320 L105 300 L108 270 Z" fill="#222222"/>
+
+  <!-- Front bumper intake -->
+  <path d="M115 270 L195 270 L195 300 L185 315 L125 325 L115 315 Z" fill="#111111"/>
+
+  <!-- Fog light -->
+  <ellipse cx="140" cy="290" rx="12" ry="8" fill="#333333"/>
+  <ellipse cx="140" cy="290" rx="8" ry="5" fill="#555555" opacity="0.5"/>
+
+  <!-- Side body line - character line -->
+  <path d="M200 185 L380 180 L500 180 L600 182 L680 188 L715 200" stroke="#c4a265" stroke-width="0.8" opacity="0.3"/>
+
+  <!-- Lower body panel -->
+  <path d="M200 260 L720 260 L720 290 L715 310 L700 325 L680 330 L200 330 L195 320 L195 290 Z" fill="#222222"/>
+
+  <!-- Side sill -->
+  <rect x="200" y="295" width="480" height="8" rx="2" fill="#1a1a1a"/>
+
+  <!-- Door lines -->
+  <line x1="330" y1="138" x2="330" y2="290" stroke="#1a1a1a" stroke-width="1" opacity="0.4"/>
+  <line x1="480" y1="132" x2="480" y2="290" stroke="#1a1a1a" stroke-width="1" opacity="0.4"/>
+
+  <!-- Door handles - flush -->
+  <rect x="350" y="195" width="30" height="5" rx="2" fill="#c4a265" opacity="0.3"/>
+  <rect x="500" y="195" width="30" height="5" rx="2" fill="#c4a265" opacity="0.25"/>
+
+  <!-- Rear section -->
+  <path d="M680 145 L700 160 L710 180 L715 200 L718 230 L720 260 L720 290 L715 310 L700 325 L680 330 L680 145 Z" fill="#252525"/>
+
+  <!-- Rear light -->
+  <path d="M700 160 L710 180 L715 200 L718 215 L705 215 L700 200 L698 180 L698 165 Z" fill="#8b1a1a" opacity="0.7"/>
+  <path d="M702 170 L708 183 L712 200 L702 200 L700 185 Z" fill="#cc2222" opacity="0.5"/>
+
+  <!-- Front wheel arch -->
+  <path d="M195 260 L200 230 L220 215 L260 210 L300 215 L320 230 L325 260 Z" fill="#1a1a1a"/>
+
+  <!-- Front wheel -->
+  <circle cx="260" cy="268" r="52" fill="#1a1a1a"/>
+  <circle cx="260" cy="268" r="48" fill="#222222"/>
+  <!-- Wheel spokes - 5 split spoke design -->
+  <circle cx="260" cy="268" r="42" fill="#2a2a2a" stroke="#444444" stroke-width="1"/>
+  <path d="M260 226 L268 252 L260 250 L252 252 Z" fill="#555555"/>
+  <path d="M302 252 L280 264 L278 256 L284 250 Z" fill="#555555"/>
+  <path d="M294 298 L274 278 L280 274 L288 278 Z" fill="#555555"/>
+  <path d="M226 298 L246 278 L240 274 L232 278 Z" fill="#555555"/>
+  <path d="M218 252 L240 264 L242 256 L236 250 Z" fill="#555555"/>
+  <!-- Wheel center cap -->
+  <circle cx="260" cy="268" r="14" fill="#333333"/>
+  <circle cx="260" cy="268" r="10" fill="#444444"/>
+  <!-- Tyre -->
+  <circle cx="260" cy="268" r="52" fill="none" stroke="#111111" stroke-width="8"/>
+
+  <!-- Rear wheel arch -->
+  <path d="M555 260 L560 230 L580 215 L620 210 L660 215 L680 230 L685 260 Z" fill="#1a1a1a"/>
+
+  <!-- Rear wheel -->
+  <circle cx="620" cy="268" r="52" fill="#1a1a1a"/>
+  <circle cx="620" cy="268" r="48" fill="#222222"/>
+  <circle cx="620" cy="268" r="42" fill="#2a2a2a" stroke="#444444" stroke-width="1"/>
+  <path d="M620 226 L628 252 L620 250 L612 252 Z" fill="#555555"/>
+  <path d="M662 252 L640 264 L638 256 L644 250 Z" fill="#555555"/>
+  <path d="M654 298 L634 278 L640 274 L648 278 Z" fill="#555555"/>
+  <path d="M586 298 L606 278 L600 274 L592 278 Z" fill="#555555"/>
+  <path d="M578 252 L600 264 L602 256 L596 250 Z" fill="#555555"/>
+  <circle cx="620" cy="268" r="14" fill="#333333"/>
+  <circle cx="620" cy="268" r="10" fill="#444444"/>
+  <circle cx="620" cy="268" r="52" fill="none" stroke="#111111" stroke-width="8"/>
+
+  <!-- Ground reflection hint -->
+  <path d="M180 340 L740 340 L735 355 L185 355 Z" fill="#2c2c2c" opacity="0.08"/>
+
+  <!-- RANGE ROVER text on bonnet/hood -->
+  <text x="350" y="148" font-family="Arial, sans-serif" font-size="9" letter-spacing="6" fill="#c4a265" opacity="0.4">RANGE ROVER</text>
+</svg>

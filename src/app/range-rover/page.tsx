@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import { getModelBySlug, formatCurrency } from "@/lib/models";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FinanceCalculator } from "@/components/FinanceCalculator";
@@ -51,40 +52,52 @@ export default function RangeRoverPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-racing-green via-racing-green-light to-racing-green py-16 lg:py-24">
+      <section className="bg-gradient-to-br from-racing-green via-racing-green-light to-racing-green py-16 lg:py-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: model.name }]} />
-          <div className="mt-8 max-w-3xl">
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-display text-white leading-tight">
-              2026 {model.name} Finance
-            </h1>
-            <p className="mt-3 text-xl text-sand font-display">
-              The definitive luxury SUV. Compare PCP, HP and lease deals on the 2026 model year Range Rover.
-            </p>
-            <p className="mt-6 text-lg text-white/80 leading-relaxed max-w-2xl">
-              {model.heroDescription}
-            </p>
-            <div className="mt-8 flex flex-wrap gap-6">
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
-                <p className="text-sm text-white/60 uppercase tracking-wider">2026 Price From</p>
-                <p className="text-2xl font-bold text-white">{formatCurrency(model.priceFrom)}</p>
+          <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div>
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-display text-white leading-tight">
+                2026 {model.name} Finance
+              </h1>
+              <p className="mt-3 text-xl text-sand font-display">
+                The definitive luxury SUV. Compare PCP, HP and lease deals on the 2026 model year Range Rover.
+              </p>
+              <p className="mt-6 text-lg text-white/80 leading-relaxed max-w-2xl">
+                {model.heroDescription}
+              </p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <div className="bg-white/10 backdrop-blur rounded-lg px-5 py-3">
+                  <p className="text-xs text-white/60 uppercase tracking-wider">2026 Price From</p>
+                  <p className="text-xl font-bold text-white">{formatCurrency(model.priceFrom)}</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur rounded-lg px-5 py-3">
+                  <p className="text-xs text-white/60 uppercase tracking-wider">Monthly From</p>
+                  <p className="text-xl font-bold text-sand">{formatCurrency(model.typicalMonthly)}/mo</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur rounded-lg px-5 py-3">
+                  <p className="text-xs text-white/60 uppercase tracking-wider">Deposit</p>
+                  <p className="text-xl font-bold text-white">{formatCurrency(model.typicalDeposit)}</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur rounded-lg px-5 py-3">
+                  <p className="text-xs text-white/60 uppercase tracking-wider">Typical APR</p>
+                  <p className="text-xl font-bold text-white">{model.typicalApr}%</p>
+                </div>
               </div>
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
-                <p className="text-sm text-white/60 uppercase tracking-wider">Monthly From</p>
-                <p className="text-2xl font-bold text-sand">{formatCurrency(model.typicalMonthly)}/mo</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
-                <p className="text-sm text-white/60 uppercase tracking-wider">Deposit</p>
-                <p className="text-2xl font-bold text-white">{formatCurrency(model.typicalDeposit)}</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
-                <p className="text-sm text-white/60 uppercase tracking-wider">Typical APR</p>
-                <p className="text-2xl font-bold text-white">{model.typicalApr}%</p>
-              </div>
+              <p className="mt-3 text-xs text-white/50">
+                Representative example: {formatCurrency(model.typicalMonthly)}/mo with {formatCurrency(model.typicalDeposit)} deposit, {model.typicalTerm} months at {model.typicalApr}% APR. Finance subject to status.
+              </p>
             </div>
-            <p className="mt-3 text-xs text-white/50">
-              Representative example: {formatCurrency(model.typicalMonthly)}/mo with {formatCurrency(model.typicalDeposit)} deposit, {model.typicalTerm} months at {model.typicalApr}% APR. Finance subject to status.
-            </p>
+            <div className="relative lg:ml-8">
+              <Image
+                src="/images/range-rover-hero.svg"
+                alt="2026 Range Rover illustration"
+                width={800}
+                height={400}
+                className="w-full h-auto drop-shadow-2xl"
+                priority
+              />
+            </div>
           </div>
         </div>
       </section>
