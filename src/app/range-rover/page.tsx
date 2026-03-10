@@ -94,7 +94,7 @@ export default function RangeRoverPage() {
                 alt="2026 Range Rover"
                 width={1000}
                 height={563}
-                className="w-full max-w-[125%] lg:max-w-none lg:w-[125%] h-auto drop-shadow-2xl"
+                className="w-full max-w-[160%] lg:max-w-none lg:w-[160%] h-auto drop-shadow-2xl"
                 priority
               />
             </div>
