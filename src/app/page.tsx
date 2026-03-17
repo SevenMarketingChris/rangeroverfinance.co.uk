@@ -68,9 +68,9 @@ export default function HomePage() {
         <div className="absolute inset-0 hero-lineup-ambient" />
 
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 pt-24 lg:pt-32 pb-16">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:gap-8">
+          <div className="relative">
             {/* Text content — left */}
-            <div className="lg:w-[45%] relative z-10 shrink-0">
+            <div className="lg:w-[50%] relative z-10">
               <p className="text-[11px] tracking-[0.4em] text-rr-accent uppercase mb-6">
                 Finance Comparison
               </p>
@@ -113,10 +113,10 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Flagship Range Rover — right */}
-            <div className="relative lg:w-[50%] h-[340px] sm:h-[400px] lg:h-[480px] mt-8 lg:mt-0">
-              <div className="hero-car-slot hero-car-hero absolute bottom-0 right-0 w-[90%] lg:w-[95%]" style={{ animationDelay: "0.1s" }}>
-                <Image src="/images/models/range-rover.png" alt="Range Rover" fill className="object-contain object-bottom" sizes="(max-width: 1024px) 70vw, 40vw" priority />
+            {/* Flagship Range Rover — right, absolutely positioned so it doesn't push into text */}
+            <div className="hidden lg:block absolute top-1/2 -translate-y-1/2 right-0 w-[45%] h-[420px]">
+              <div className="hero-car-slot hero-car-hero absolute bottom-0 right-0 w-full h-full" style={{ animationDelay: "0.1s" }}>
+                <Image src="/images/models/range-rover.png" alt="Range Rover" fill className="object-contain object-right-bottom" sizes="40vw" priority />
               </div>
             </div>
           </div>
