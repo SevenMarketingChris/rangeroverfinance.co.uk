@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { FinanceCalculator } from "@/components/FinanceCalculator";
 import { ModelCard } from "@/components/ModelCard";
 import { CTASection } from "@/components/CTASection";
 import { FAQSection } from "@/components/FAQSection";
 import { models } from "@/lib/models";
+import { OrganizationSchema, WebsiteSchema, FAQSchema } from "@/components/SchemaMarkup";
 
 export const metadata: Metadata = {
   title: "Range Rover Finance UK | Compare PCP, HP & Lease Deals | Free Calculator",
@@ -55,52 +57,91 @@ const homepageFaqs = [
 export default function HomePage() {
   return (
     <>
+      <OrganizationSchema />
+      <WebsiteSchema />
+      <FAQSchema faqs={homepageFaqs} />
+
       {/* Hero */}
       <section className="relative bg-rr-black overflow-hidden">
+        {/* Background layers */}
         <div className="absolute inset-0 bg-gradient-to-b from-rr-black via-rr-black-light/50 to-rr-black" />
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-white/[0.02] to-transparent" />
-        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 py-28 lg:py-44">
-          <div className="max-w-2xl">
-            <p className="text-[11px] tracking-[0.4em] text-rr-accent uppercase mb-6">
-              Finance Comparison
-            </p>
-            <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-light text-white leading-[1.1] tracking-tight">
-              Range Rover
-              <br />
-              Finance
-            </h1>
-            <p className="mt-8 text-[15px] text-white/40 leading-relaxed max-w-lg">
-              Compare PCP, HP and lease deals across the complete Range Rover
-              and Land Rover lineup. Free calculator. No obligation.
-            </p>
-            <div className="mt-12 flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/calculator"
-                className="inline-flex items-center justify-center px-10 py-4 bg-white text-rr-black text-[11px] tracking-[0.25em] uppercase hover:bg-rr-frost transition-colors duration-300"
-              >
-                Calculate Payment
-              </Link>
-              <Link
-                href="/apply"
-                className="inline-flex items-center justify-center px-10 py-4 border border-white/15 text-white text-[11px] tracking-[0.25em] uppercase hover:bg-white/5 transition-all duration-300"
-              >
-                Get a Quote
-              </Link>
-            </div>
-          </div>
+        <div className="absolute inset-0 hero-lineup-ambient" />
 
-          {/* Stats */}
-          <div className="mt-24 flex gap-16 lg:gap-24">
-            {[
-              { value: "7", label: "Models" },
-              { value: "3", label: "Finance Types" },
-              { value: "Free", label: "Calculator" },
-            ].map((stat) => (
-              <div key={stat.label}>
-                <p className="text-3xl lg:text-4xl font-light text-white">{stat.value}</p>
-                <p className="text-[10px] tracking-[0.3em] text-white/25 mt-2 uppercase">{stat.label}</p>
+        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 pt-24 lg:pt-32 pb-16">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:gap-8">
+            {/* Text content — left */}
+            <div className="lg:w-[45%] relative z-10 shrink-0">
+              <p className="text-[11px] tracking-[0.4em] text-rr-accent uppercase mb-6">
+                Finance Comparison
+              </p>
+              <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-light text-white leading-[1.1] tracking-tight">
+                Range Rover
+                <br />
+                Finance
+              </h1>
+              <p className="mt-8 text-[15px] text-white/40 leading-relaxed max-w-lg">
+                Compare PCP, HP and lease deals across the complete Range Rover
+                and Land Rover lineup. Free calculator. No obligation.
+              </p>
+              <div className="mt-10 flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/calculator"
+                  className="inline-flex items-center justify-center px-10 py-4 bg-white text-rr-black text-[11px] tracking-[0.25em] uppercase hover:bg-rr-frost transition-colors duration-300"
+                >
+                  Calculate Payment
+                </Link>
+                <Link
+                  href="/apply"
+                  className="inline-flex items-center justify-center px-10 py-4 border border-white/15 text-white text-[11px] tracking-[0.25em] uppercase hover:bg-white/5 transition-all duration-300"
+                >
+                  Get a Quote
+                </Link>
               </div>
-            ))}
+
+              {/* Stats */}
+              <div className="flex gap-16 lg:gap-20 mt-14">
+                {[
+                  { value: "7", label: "Models" },
+                  { value: "3", label: "Finance Types" },
+                  { value: "Free", label: "Calculator" },
+                ].map((stat) => (
+                  <div key={stat.label}>
+                    <p className="text-3xl lg:text-4xl font-light text-white">{stat.value}</p>
+                    <p className="text-[10px] tracking-[0.3em] text-white/25 mt-2 uppercase">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Car lineup — right */}
+            <div className="relative lg:w-[55%] h-[340px] sm:h-[400px] lg:h-[480px] mt-8 lg:mt-0">
+              {/* Back row */}
+              <div className="hero-car-slot absolute bottom-[18%] left-[2%] w-[24%] lg:w-[22%] opacity-50" style={{ animationDelay: "0.5s" }}>
+                <Image src="/images/models/discovery.png" alt="Discovery" fill className="object-contain object-bottom" sizes="12vw" />
+              </div>
+              <div className="hero-car-slot absolute bottom-[20%] left-[14%] w-[26%] lg:w-[24%] opacity-60" style={{ animationDelay: "0.4s" }}>
+                <Image src="/images/models/discovery-sport.png" alt="Discovery Sport" fill className="object-contain object-bottom" sizes="13vw" />
+              </div>
+              <div className="hero-car-slot absolute bottom-[20%] right-[14%] w-[26%] lg:w-[24%] opacity-60" style={{ animationDelay: "0.4s" }}>
+                <Image src="/images/models/range-rover-evoque.png" alt="Range Rover Evoque" fill className="object-contain object-bottom" sizes="13vw" />
+              </div>
+              <div className="hero-car-slot absolute bottom-[18%] right-[2%] w-[24%] lg:w-[22%] opacity-50" style={{ animationDelay: "0.5s" }}>
+                <Image src="/images/models/defender.png" alt="Defender" fill className="object-contain object-bottom" sizes="12vw" />
+              </div>
+
+              {/* Mid row */}
+              <div className="hero-car-slot absolute bottom-[6%] left-[6%] w-[32%] lg:w-[30%] opacity-80" style={{ animationDelay: "0.25s" }}>
+                <Image src="/images/models/range-rover-velar.png" alt="Range Rover Velar" fill className="object-contain object-bottom" sizes="16vw" />
+              </div>
+              <div className="hero-car-slot absolute bottom-[6%] right-[6%] w-[32%] lg:w-[30%] opacity-80" style={{ animationDelay: "0.25s" }}>
+                <Image src="/images/models/range-rover-sport.png" alt="Range Rover Sport" fill className="object-contain object-bottom" sizes="16vw" />
+              </div>
+
+              {/* Front center — the flagship */}
+              <div className="hero-car-slot hero-car-hero absolute bottom-0 left-1/2 -translate-x-1/2 w-[52%] lg:w-[46%]" style={{ animationDelay: "0.1s" }}>
+                <Image src="/images/models/range-rover.png" alt="Range Rover" fill className="object-contain object-bottom" sizes="25vw" priority />
+              </div>
+            </div>
           </div>
         </div>
       </section>
