@@ -66,7 +66,7 @@ export default function RangeRoverPage() {
       <section className="bg-gradient-to-br from-racing-green via-racing-green-light to-racing-green py-16 lg:py-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: model.name }]} />
-          <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="mt-8 grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-8 items-center">
             <div>
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-display text-white leading-tight">
                 2026 {model.name} Finance
@@ -77,20 +77,20 @@ export default function RangeRoverPage() {
               <p className="mt-6 text-lg text-white/80 leading-relaxed max-w-2xl">
                 {model.heroDescription}
               </p>
-              <div className="mt-8 flex flex-wrap gap-6">
-                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+              <div className="mt-8 flex flex-wrap gap-3">
+                <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
                   <p className="text-sm text-white/60 uppercase tracking-wider">2026 Price From</p>
                   <p className="text-2xl font-bold text-white">{formatCurrency(model.priceFrom)}</p>
                 </div>
-                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
                   <p className="text-sm text-white/60 uppercase tracking-wider">Monthly From</p>
                   <p className="text-2xl font-bold text-sand">{formatCurrency(model.typicalMonthly)}/mo</p>
                 </div>
-                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
                   <p className="text-sm text-white/60 uppercase tracking-wider">Deposit</p>
                   <p className="text-2xl font-bold text-white">{formatCurrency(model.typicalDeposit)}</p>
                 </div>
-                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
                   <p className="text-sm text-white/60 uppercase tracking-wider">Typical APR</p>
                   <p className="text-2xl font-bold text-white">{model.typicalApr}%</p>
                 </div>

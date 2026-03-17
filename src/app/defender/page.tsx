@@ -64,7 +64,7 @@ export default function DefenderPage() {
       <section className="bg-gradient-to-br from-racing-green via-racing-green-light to-racing-green py-16 lg:py-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: model.name }]} />
-          <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="mt-8 grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-8 items-center">
             <div>
               <p className="text-sand font-display text-sm uppercase tracking-widest mb-3">
                 2026 Model Year
@@ -80,24 +80,24 @@ export default function DefenderPage() {
                 From the nimble 2-door 90 to the 8-seat 130, and now crowned by the 635 PS OCTA,
                 there is a Defender for every ambition. Finance one from {formatCurrency(model.typicalMonthly)}/month.
               </p>
-              <div className="mt-8 flex flex-wrap gap-6">
-                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+              <div className="mt-8 flex flex-wrap gap-3">
+                <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
                   <p className="text-sm text-white/60 uppercase tracking-wider">Price From</p>
                   <p className="text-2xl font-bold text-white">{formatCurrency(model.priceFrom)}</p>
                 </div>
-                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
                   <p className="text-sm text-white/60 uppercase tracking-wider">Monthly From</p>
                   <p className="text-2xl font-bold text-sand">{formatCurrency(model.typicalMonthly)}/mo</p>
                 </div>
-                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
                   <p className="text-sm text-white/60 uppercase tracking-wider">Deposit</p>
                   <p className="text-2xl font-bold text-white">{formatCurrency(model.typicalDeposit)}</p>
                 </div>
-                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
                   <p className="text-sm text-white/60 uppercase tracking-wider">Typical APR</p>
                   <p className="text-2xl font-bold text-white">{model.typicalApr}%</p>
                 </div>
-                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
                   <p className="text-sm text-white/60 uppercase tracking-wider">Body Styles</p>
                   <p className="text-2xl font-bold text-white">90 / 110 / 130</p>
                 </div>
@@ -604,19 +604,19 @@ export default function DefenderPage() {
             </div>
           </div>
           <div className="mt-10 flex flex-wrap justify-center gap-6">
-            <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4 text-center">
+            <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3 text-center">
               <p className="text-xs text-white/60 uppercase tracking-wider mb-1">Power</p>
               <p className="text-2xl font-bold text-white">635 PS</p>
             </div>
-            <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4 text-center">
+            <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3 text-center">
               <p className="text-xs text-white/60 uppercase tracking-wider mb-1">Torque</p>
               <p className="text-2xl font-bold text-white">750 Nm</p>
             </div>
-            <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4 text-center">
+            <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3 text-center">
               <p className="text-xs text-white/60 uppercase tracking-wider mb-1">Price From</p>
               <p className="text-2xl font-bold text-white">£120,000+</p>
             </div>
-            <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4 text-center">
+            <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3 text-center">
               <p className="text-xs text-white/60 uppercase tracking-wider mb-1">Brakes</p>
               <p className="text-2xl font-bold text-white">6-Piston Brembo</p>
             </div>
