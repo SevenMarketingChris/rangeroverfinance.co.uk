@@ -114,9 +114,9 @@ export default function HomePage() {
             </div>
 
             {/* Flagship Range Rover — right, absolutely positioned so it doesn't push into text */}
-            <div className="hidden lg:block absolute top-1/2 -translate-y-1/2 right-0 w-[45%] h-[420px]">
+            <div className="hidden lg:block absolute top-1/2 -translate-y-1/2 -right-[5%] w-[40%] h-[420px]">
               <div className="hero-car-slot hero-car-hero absolute bottom-0 right-0 w-full h-full" style={{ animationDelay: "0.1s" }}>
-                <Image src="/images/models/range-rover.png" alt="Range Rover" fill className="object-contain object-right-bottom" sizes="40vw" priority />
+                <Image src="/images/models/range-rover.png" alt="Range Rover" fill className="object-contain object-right-bottom" sizes="35vw" priority />
               </div>
             </div>
           </div>
