@@ -114,9 +114,9 @@ export default function HomePage() {
             </div>
 
             {/* Flagship Range Rover — right */}
-            <div className="relative lg:w-[55%] h-[340px] sm:h-[400px] lg:h-[480px] mt-8 lg:mt-0">
-              <div className="hero-car-slot hero-car-hero absolute bottom-0 left-1/2 -translate-x-1/2 w-[85%] lg:w-[90%]" style={{ animationDelay: "0.1s" }}>
-                <Image src="/images/models/range-rover.png" alt="Range Rover" fill className="object-contain object-bottom" sizes="(max-width: 1024px) 70vw, 45vw" priority />
+            <div className="relative lg:w-[50%] h-[340px] sm:h-[400px] lg:h-[480px] mt-8 lg:mt-0">
+              <div className="hero-car-slot hero-car-hero absolute bottom-0 right-0 w-[90%] lg:w-[95%]" style={{ animationDelay: "0.1s" }}>
+                <Image src="/images/models/range-rover.png" alt="Range Rover" fill className="object-contain object-bottom" sizes="(max-width: 1024px) 70vw, 40vw" priority />
               </div>
             </div>
           </div>
