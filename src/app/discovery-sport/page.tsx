@@ -1,9 +1,11 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import { getModelBySlug, formatCurrency } from "@/lib/models";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FinanceCalculator } from "@/components/FinanceCalculator";
 import { CTASection } from "@/components/CTASection";
 import { FAQSection } from "@/components/FAQSection";
+import { VehicleFinanceSchema, BreadcrumbSchema, FAQSchema } from "@/components/SchemaMarkup";
 
 const model = getModelBySlug("discovery-sport")!;
 
@@ -13,11 +15,11 @@ export const metadata: Metadata = {
 };
 
 const powertrains = [
-  { engine: "P200 Petrol MHEV", power: "200 PS", torque: "340 Nm", acceleration: "8.6s", topSpeed: "127 mph", co2: "180-194", mpg: "33-36" },
-  { engine: "P250 Petrol MHEV", power: "249 PS", torque: "365 Nm", acceleration: "7.2s", topSpeed: "136 mph", co2: "180-194", mpg: "33-36" },
-  { engine: "P300e PHEV", power: "309 PS", torque: "540 Nm", acceleration: "6.6s", topSpeed: "130 mph", co2: "36-44", mpg: "130-141" },
-  { engine: "D165 Diesel MHEV", power: "163 PS", torque: "380 Nm", acceleration: "9.9s", topSpeed: "117 mph", co2: "163-175", mpg: "43-46" },
-  { engine: "D200 Diesel MHEV", power: "204 PS", torque: "430 Nm", acceleration: "8.4s", topSpeed: "127 mph", co2: "163-179", mpg: "42-46" },
+  { engine: "P200 Petrol MHEV", power: "200 PS", torque: "340 Nm", co2: "180-194", mpg: "33-36" },
+  { engine: "P250 Petrol MHEV", power: "249 PS", torque: "365 Nm", co2: "180-194", mpg: "33-36" },
+  { engine: "P300e PHEV", power: "309 PS", torque: "540 Nm", co2: "36-44", mpg: "130-141" },
+  { engine: "D165 Diesel MHEV", power: "163 PS", torque: "380 Nm", co2: "163-175", mpg: "43-46" },
+  { engine: "D200 Diesel MHEV", power: "204 PS", torque: "430 Nm", co2: "163-179", mpg: "42-46" },
 ];
 
 const trimLevels = [
@@ -117,45 +119,71 @@ const faqs = [
 export default function DiscoverySportPage() {
   return (
     <>
+      <VehicleFinanceSchema
+        modelName="Land Rover Discovery Sport"
+        priceFrom={model.priceFrom}
+        monthlyFrom={model.typicalMonthly}
+        apr={model.typicalApr}
+        url="https://www.rangeroverfinance.co.uk/discovery-sport"
+      />
+      <BreadcrumbSchema items={[{ name: "Discovery Sport", url: "https://www.rangeroverfinance.co.uk/discovery-sport" }]} />
+      <FAQSchema faqs={faqs} />
+
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-racing-green via-racing-green-light to-racing-green py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: model.name }]} />
-          <div className="mt-8 max-w-3xl">
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-display text-white leading-tight">
-              2026 {model.fullName} Finance
-            </h1>
-            <p className="mt-3 text-xl text-sand font-display">
-              The most affordable Land Rover. Compact family capability with 5+2 seating from just {formatCurrency(model.typicalMonthly)}/mo.
-            </p>
-            <p className="mt-6 text-lg text-white/80 leading-relaxed max-w-2xl">
-              The 2026 Discovery Sport (L550) is the entry point to Land Rover ownership — a compact
-              family SUV that seats up to seven, tows 2,500 kg, and wades through 600mm of water, all
-              while fitting comfortably into a supermarket car park. With five powertrains including
-              a plug-in hybrid offering CO2 from just 36 g/km, the Discovery Sport makes premium
-              SUV finance more accessible than ever.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-6">
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
-                <p className="text-sm text-white/60 uppercase tracking-wider">Price From</p>
-                <p className="text-2xl font-bold text-white">{formatCurrency(model.priceFrom)}</p>
+          <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-display text-white leading-tight">
+                2026 {model.fullName} Finance
+              </h1>
+              <p className="mt-3 text-xl text-sand font-display">
+                The most affordable Land Rover. Compact family capability with 5+2 seating from just {formatCurrency(model.typicalMonthly)}/mo.
+              </p>
+              <p className="mt-6 text-lg text-white/80 leading-relaxed max-w-2xl">
+                The 2026 Discovery Sport (L550) is the entry point to Land Rover ownership — a compact
+                family SUV that seats up to seven, tows 2,500 kg, and wades through 600mm of water, all
+                while fitting comfortably into a supermarket car park. With five powertrains including
+                a plug-in hybrid offering CO2 from just 36 g/km, the Discovery Sport makes premium
+                SUV finance more accessible than ever.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-6">
+                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                  <p className="text-sm text-white/60 uppercase tracking-wider">Price From</p>
+                  <p className="text-2xl font-bold text-white">{formatCurrency(model.priceFrom)}</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                  <p className="text-sm text-white/60 uppercase tracking-wider">Monthly From</p>
+                  <p className="text-2xl font-bold text-sand">{formatCurrency(model.typicalMonthly)}/mo</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                  <p className="text-sm text-white/60 uppercase tracking-wider">Deposit</p>
+                  <p className="text-2xl font-bold text-white">{formatCurrency(model.typicalDeposit)}</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                  <p className="text-sm text-white/60 uppercase tracking-wider">Typical APR</p>
+                  <p className="text-2xl font-bold text-white">{model.typicalApr}%</p>
+                </div>
               </div>
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
-                <p className="text-sm text-white/60 uppercase tracking-wider">Monthly From</p>
-                <p className="text-2xl font-bold text-sand">{formatCurrency(model.typicalMonthly)}/mo</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
-                <p className="text-sm text-white/60 uppercase tracking-wider">Deposit</p>
-                <p className="text-2xl font-bold text-white">{formatCurrency(model.typicalDeposit)}</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
-                <p className="text-sm text-white/60 uppercase tracking-wider">Typical APR</p>
-                <p className="text-2xl font-bold text-white">{model.typicalApr}%</p>
+              <p className="mt-3 text-xs text-white/50">
+                Representative example: {formatCurrency(model.typicalMonthly)}/mo with {formatCurrency(model.typicalDeposit)} deposit, {model.typicalTerm} months at {model.typicalApr}% APR. Finance subject to status.
+              </p>
+            </div>
+            <div className="model-hero-stage">
+              <div className="model-hero-glow" />
+
+              <div className="model-hero-car">
+                <Image
+                  src="/images/models/discovery-sport.png"
+                  alt="Discovery Sport Dynamic SE in Eiger Grey - front three-quarter view"
+                  fill
+                  className="object-contain object-bottom"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
               </div>
             </div>
-            <p className="mt-3 text-xs text-white/50">
-              Representative example: {formatCurrency(model.typicalMonthly)}/mo with {formatCurrency(model.typicalDeposit)} deposit, {model.typicalTerm} months at {model.typicalApr}% APR. Finance subject to status.
-            </p>
           </div>
         </div>
       </section>
@@ -276,8 +304,6 @@ export default function DiscoverySportPage() {
                   <th className="text-left px-4 py-3 font-display">Engine</th>
                   <th className="text-center px-4 py-3 font-display">Power</th>
                   <th className="text-center px-4 py-3 font-display">Torque</th>
-                  <th className="text-center px-4 py-3 font-display">0-60 mph</th>
-                  <th className="text-center px-4 py-3 font-display">Top Speed</th>
                   <th className="text-center px-4 py-3 font-display">CO2 (g/km)</th>
                   <th className="text-center px-4 py-3 font-display">MPG</th>
                 </tr>
@@ -288,8 +314,6 @@ export default function DiscoverySportPage() {
                     <td className="px-4 py-3 font-semibold text-charcoal">{pt.engine}</td>
                     <td className="px-4 py-3 text-center text-slate">{pt.power}</td>
                     <td className="px-4 py-3 text-center text-slate">{pt.torque}</td>
-                    <td className="px-4 py-3 text-center text-slate">{pt.acceleration}</td>
-                    <td className="px-4 py-3 text-center text-slate">{pt.topSpeed}</td>
                     <td className="px-4 py-3 text-center text-slate">{pt.co2}</td>
                     <td className="px-4 py-3 text-center text-slate">{pt.mpg}</td>
                   </tr>

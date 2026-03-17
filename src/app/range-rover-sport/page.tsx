@@ -1,9 +1,11 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import { getModelBySlug, formatCurrency } from "@/lib/models";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FinanceCalculator } from "@/components/FinanceCalculator";
 import { CTASection } from "@/components/CTASection";
 import { FAQSection } from "@/components/FAQSection";
+import { VehicleFinanceSchema, BreadcrumbSchema, FAQSchema } from "@/components/SchemaMarkup";
 
 const model = getModelBySlug("range-rover-sport")!;
 
@@ -27,7 +29,7 @@ const faqs = [
   },
   {
     question: "Can I finance a 2026 Range Rover Sport V8?",
-    answer: "Yes, the 2026 Range Rover Sport P530 V8 Twin Turbo can be financed through PCP, HP, or lease. The V8 starts from around £115,000 and typically commands monthly PCP payments of £900-£1,100 depending on deposit and term. The V8 Sport holds its value well due to limited production and strong enthusiast demand. With 530 PS and a 3.8-second 0-60 time, it delivers supercar performance in an SUV body. Insurance sits in group 50, and running costs are higher than six-cylinder models, but for many owners the 4.4-litre twin-turbo V8 experience justifies the premium.",
+    answer: "Yes, the 2026 Range Rover Sport P530 V8 Twin Turbo can be financed through PCP, HP, or lease. The V8 starts from around £115,000 and typically commands monthly PCP payments of £900-£1,100 depending on deposit and term. The V8 Sport holds its value well due to limited production and strong enthusiast demand. With 530 PS, it delivers supercar-rivalling performance in an SUV body. Insurance sits in group 50, and running costs are higher than six-cylinder models, but for many owners the 4.4-litre twin-turbo V8 experience justifies the premium.",
   },
   {
     question: "What happens at the end of my Range Rover Sport PCP deal?",
@@ -50,46 +52,68 @@ const faqs = [
 export default function RangeRoverSportPage() {
   return (
     <>
+      <VehicleFinanceSchema
+        modelName="Range Rover Sport"
+        priceFrom={model.priceFrom}
+        monthlyFrom={model.typicalMonthly}
+        apr={model.typicalApr}
+        url="https://www.rangeroverfinance.co.uk/range-rover-sport"
+      />
+      <BreadcrumbSchema items={[{ name: "Range Rover Sport", url: "https://www.rangeroverfinance.co.uk/range-rover-sport" }]} />
+      <FAQSchema faqs={faqs} />
+
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-racing-green via-racing-green-light to-racing-green py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: model.name }]} />
-          <div className="mt-8 max-w-3xl">
-            <p className="text-sand font-display text-sm uppercase tracking-widest mb-2">2026 Model Year</p>
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-display text-white leading-tight">
-              {model.name} Finance
-            </h1>
-            <p className="mt-3 text-xl text-sand font-display">{model.tagline}</p>
-            <p className="mt-6 text-lg text-white/80 leading-relaxed max-w-2xl">
-              Compare PCP, HP and lease deals on the 2026 Range Rover Sport. From the efficient D250 diesel
-              to the blistering 530 PS V8, find the right powertrain and the right finance package for
-              the most dynamic Range Rover ever built.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-6">
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
-                <p className="text-sm text-white/60 uppercase tracking-wider">Price From</p>
-                <p className="text-2xl font-bold text-white">{formatCurrency(model.priceFrom)}</p>
+          <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-sand font-display text-sm uppercase tracking-widest mb-2">2026 Model Year</p>
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-display text-white leading-tight">
+                {model.name} Finance
+              </h1>
+              <p className="mt-3 text-xl text-sand font-display">{model.tagline}</p>
+              <p className="mt-6 text-lg text-white/80 leading-relaxed max-w-2xl">
+                Compare PCP, HP and lease deals on the 2026 Range Rover Sport. From the efficient D250 diesel
+                to the blistering 530 PS V8, find the right powertrain and the right finance package for
+                the most dynamic Range Rover ever built.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-6">
+                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                  <p className="text-sm text-white/60 uppercase tracking-wider">Price From</p>
+                  <p className="text-2xl font-bold text-white">{formatCurrency(model.priceFrom)}</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                  <p className="text-sm text-white/60 uppercase tracking-wider">Monthly From</p>
+                  <p className="text-2xl font-bold text-sand">{formatCurrency(model.typicalMonthly)}/mo</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                  <p className="text-sm text-white/60 uppercase tracking-wider">Deposit</p>
+                  <p className="text-2xl font-bold text-white">{formatCurrency(model.typicalDeposit)}</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                  <p className="text-sm text-white/60 uppercase tracking-wider">Typical APR</p>
+                  <p className="text-2xl font-bold text-white">{model.typicalApr}%</p>
+                </div>
               </div>
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
-                <p className="text-sm text-white/60 uppercase tracking-wider">Monthly From</p>
-                <p className="text-2xl font-bold text-sand">{formatCurrency(model.typicalMonthly)}/mo</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
-                <p className="text-sm text-white/60 uppercase tracking-wider">Deposit</p>
-                <p className="text-2xl font-bold text-white">{formatCurrency(model.typicalDeposit)}</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
-                <p className="text-sm text-white/60 uppercase tracking-wider">Typical APR</p>
-                <p className="text-2xl font-bold text-white">{model.typicalApr}%</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
-                <p className="text-sm text-white/60 uppercase tracking-wider">0-60 mph</p>
-                <p className="text-2xl font-bold text-white">From 3.8s</p>
+              <p className="mt-3 text-xs text-white/50">
+                Representative example: {formatCurrency(model.typicalMonthly)}/mo with {formatCurrency(model.typicalDeposit)} deposit, {model.typicalTerm} months at {model.typicalApr}% APR. Finance subject to status.
+              </p>
+            </div>
+            <div className="model-hero-stage">
+              <div className="model-hero-glow" />
+
+              <div className="model-hero-car">
+                <Image
+                  src="/images/models/range-rover-sport.png"
+                  alt="Range Rover Sport SV Edition Two in Sunrise Copper - front three-quarter view"
+                  fill
+                  className="object-contain object-bottom"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
               </div>
             </div>
-            <p className="mt-3 text-xs text-white/50">
-              Representative example: {formatCurrency(model.typicalMonthly)}/mo with {formatCurrency(model.typicalDeposit)} deposit, {model.typicalTerm} months at {model.typicalApr}% APR. Finance subject to status.
-            </p>
           </div>
         </div>
       </section>
@@ -113,7 +137,7 @@ export default function RangeRoverSportPage() {
               For the 2026 model year, the Sport lineup spans five powertrains covering everything from
               frugal diesel motoring to supercar-rivalling V8 performance. The entry-level D250 diesel
               provides a sensible, high-economy starting point for drivers who cover serious mileage, while
-              the range-topping P530 V8 Twin Turbo delivers 530 PS and a 3.8-second 0-60 mph sprint that
+              the range-topping P530 V8 Twin Turbo delivers 530 PS and performance that
               would embarrass many two-door sports cars. In between, the D300 diesel, P400 mild hybrid, and
               P510e plug-in hybrid each serve distinct ownership profiles.
             </p>
@@ -151,8 +175,6 @@ export default function RangeRoverSportPage() {
                   <th className="px-4 py-3 text-left font-display font-semibold">Engine</th>
                   <th className="px-4 py-3 text-center font-display font-semibold">Power</th>
                   <th className="px-4 py-3 text-center font-display font-semibold">Torque</th>
-                  <th className="px-4 py-3 text-center font-display font-semibold">0-60 mph</th>
-                  <th className="px-4 py-3 text-center font-display font-semibold">Top Speed</th>
                   <th className="px-4 py-3 text-center font-display font-semibold">CO2 (g/km)</th>
                   <th className="px-4 py-3 text-center font-display font-semibold">MPG</th>
                 </tr>
@@ -162,8 +184,6 @@ export default function RangeRoverSportPage() {
                   <td className="px-4 py-3 font-semibold text-charcoal">D250 Diesel</td>
                   <td className="px-4 py-3 text-center text-slate">249 PS</td>
                   <td className="px-4 py-3 text-center text-slate">600 Nm</td>
-                  <td className="px-4 py-3 text-center text-slate">7.2s</td>
-                  <td className="px-4 py-3 text-center text-slate">135 mph</td>
                   <td className="px-4 py-3 text-center text-slate">199-205</td>
                   <td className="px-4 py-3 text-center text-slate">36-37</td>
                 </tr>
@@ -171,8 +191,6 @@ export default function RangeRoverSportPage() {
                   <td className="px-4 py-3 font-semibold text-charcoal">D300 Diesel</td>
                   <td className="px-4 py-3 text-center text-slate">300 PS</td>
                   <td className="px-4 py-3 text-center text-slate">650 Nm</td>
-                  <td className="px-4 py-3 text-center text-slate">6.1s</td>
-                  <td className="px-4 py-3 text-center text-slate">140 mph</td>
                   <td className="px-4 py-3 text-center text-slate">199-209</td>
                   <td className="px-4 py-3 text-center text-slate">35-37</td>
                 </tr>
@@ -180,8 +198,6 @@ export default function RangeRoverSportPage() {
                   <td className="px-4 py-3 font-semibold text-charcoal">P400 Mild Hybrid</td>
                   <td className="px-4 py-3 text-center text-slate">400 PS</td>
                   <td className="px-4 py-3 text-center text-slate">550 Nm</td>
-                  <td className="px-4 py-3 text-center text-slate">5.4s</td>
-                  <td className="px-4 py-3 text-center text-slate">155 mph</td>
                   <td className="px-4 py-3 text-center text-slate">231-243</td>
                   <td className="px-4 py-3 text-center text-slate">26-28</td>
                 </tr>
@@ -189,8 +205,6 @@ export default function RangeRoverSportPage() {
                   <td className="px-4 py-3 font-semibold text-charcoal">P530 V8 Twin Turbo</td>
                   <td className="px-4 py-3 text-center text-slate">530 PS</td>
                   <td className="px-4 py-3 text-center text-slate">750 Nm</td>
-                  <td className="px-4 py-3 text-center text-slate">3.8s</td>
-                  <td className="px-4 py-3 text-center text-slate">162 mph</td>
                   <td className="px-4 py-3 text-center text-slate">283-298</td>
                   <td className="px-4 py-3 text-center text-slate">22-23</td>
                 </tr>
@@ -198,8 +212,6 @@ export default function RangeRoverSportPage() {
                   <td className="px-4 py-3 font-semibold text-charcoal">P510e PHEV</td>
                   <td className="px-4 py-3 text-center text-slate">510 PS</td>
                   <td className="px-4 py-3 text-center text-slate">700 Nm</td>
-                  <td className="px-4 py-3 text-center text-slate">4.3s</td>
-                  <td className="px-4 py-3 text-center text-slate">155 mph</td>
                   <td className="px-4 py-3 text-center text-slate">18-22</td>
                   <td className="px-4 py-3 text-center text-slate">353-404</td>
                 </tr>
@@ -807,8 +819,7 @@ export default function RangeRoverSportPage() {
                 The 2026 Range Rover Sport is the most dynamically capable Range Rover ever built, offering
                 a driving experience that rivals dedicated performance SUVs from Porsche and BMW. The
                 sport-tuned Dynamic Air Suspension with switchable-volume air springs, active roll control,
-                and torque vectoring deliver genuinely engaging handling. With the P530 V8 hitting 60 mph
-                in just 3.8 seconds, it is quicker than many dedicated sports cars. Financing a Sport means
+                and torque vectoring deliver genuinely engaging handling. With the P530 V8 delivering 530 PS, it rivals many dedicated sports cars. Financing a Sport means
                 accessing this performance with predictable monthly payments, rather than committing over
                 £80,000 upfront.
               </p>

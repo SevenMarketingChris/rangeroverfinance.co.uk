@@ -1,9 +1,11 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import { getModelBySlug, formatCurrency } from "@/lib/models";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FinanceCalculator } from "@/components/FinanceCalculator";
 import { CTASection } from "@/components/CTASection";
 import { FAQSection } from "@/components/FAQSection";
+import { VehicleFinanceSchema, BreadcrumbSchema, FAQSchema } from "@/components/SchemaMarkup";
 
 const model = getModelBySlug("discovery")!;
 
@@ -54,65 +56,91 @@ const faqs = [
 export default function DiscoveryPage() {
   return (
     <>
+      <VehicleFinanceSchema
+        modelName="Land Rover Discovery"
+        priceFrom={model.priceFrom}
+        monthlyFrom={model.typicalMonthly}
+        apr={model.typicalApr}
+        url="https://www.rangeroverfinance.co.uk/discovery"
+      />
+      <BreadcrumbSchema items={[{ name: "Discovery", url: "https://www.rangeroverfinance.co.uk/discovery" }]} />
+      <FAQSchema faqs={faqs} />
+
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-racing-green via-racing-green-light to-racing-green py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: model.name }]} />
-          <div className="mt-8 max-w-3xl">
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-display text-white leading-tight">
-              2026 {model.fullName} Finance
-            </h1>
-            <p className="mt-3 text-xl text-sand font-display">
-              The ultimate premium 7-seat family SUV — now available on PCP, HP
-              and lease
-            </p>
-            <p className="mt-6 text-lg text-white/80 leading-relaxed max-w-2xl">
-              Finance the 2026 Land Rover Discovery (L462) from{" "}
-              {formatCurrency(model.priceFrom)} with flexible monthly payments.
-              Seven genuine adult-sized seats, 3,500 kg towing capacity, and
-              Land Rover's legendary off-road capability make the Discovery the
-              most versatile premium SUV on sale. Compare PCP, HP and lease
-              options to find the right deal for your family.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-6">
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
-                <p className="text-sm text-white/60 uppercase tracking-wider">
-                  Price From
-                </p>
-                <p className="text-2xl font-bold text-white">
-                  {formatCurrency(model.priceFrom)}
-                </p>
+          <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-display text-white leading-tight">
+                2026 {model.fullName} Finance
+              </h1>
+              <p className="mt-3 text-xl text-sand font-display">
+                The ultimate premium 7-seat family SUV — now available on PCP, HP
+                and lease
+              </p>
+              <p className="mt-6 text-lg text-white/80 leading-relaxed max-w-2xl">
+                Finance the 2026 Land Rover Discovery (L462) from{" "}
+                {formatCurrency(model.priceFrom)} with flexible monthly payments.
+                Seven genuine adult-sized seats, 3,500 kg towing capacity, and
+                Land Rover's legendary off-road capability make the Discovery the
+                most versatile premium SUV on sale. Compare PCP, HP and lease
+                options to find the right deal for your family.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-6">
+                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                  <p className="text-sm text-white/60 uppercase tracking-wider">
+                    Price From
+                  </p>
+                  <p className="text-2xl font-bold text-white">
+                    {formatCurrency(model.priceFrom)}
+                  </p>
+                </div>
+                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                  <p className="text-sm text-white/60 uppercase tracking-wider">
+                    Monthly From
+                  </p>
+                  <p className="text-2xl font-bold text-sand">
+                    {formatCurrency(model.typicalMonthly)}/mo
+                  </p>
+                </div>
+                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                  <p className="text-sm text-white/60 uppercase tracking-wider">Deposit</p>
+                  <p className="text-2xl font-bold text-white">{formatCurrency(model.typicalDeposit)}</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                  <p className="text-sm text-white/60 uppercase tracking-wider">
+                    Typical APR
+                  </p>
+                  <p className="text-2xl font-bold text-white">
+                    {model.typicalApr}%
+                  </p>
+                </div>
+                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                  <p className="text-sm text-white/60 uppercase tracking-wider">
+                    Seats
+                  </p>
+                  <p className="text-2xl font-bold text-white">7</p>
+                </div>
               </div>
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
-                <p className="text-sm text-white/60 uppercase tracking-wider">
-                  Monthly From
-                </p>
-                <p className="text-2xl font-bold text-sand">
-                  {formatCurrency(model.typicalMonthly)}/mo
-                </p>
-              </div>
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
-                <p className="text-sm text-white/60 uppercase tracking-wider">Deposit</p>
-                <p className="text-2xl font-bold text-white">{formatCurrency(model.typicalDeposit)}</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
-                <p className="text-sm text-white/60 uppercase tracking-wider">
-                  Typical APR
-                </p>
-                <p className="text-2xl font-bold text-white">
-                  {model.typicalApr}%
-                </p>
-              </div>
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
-                <p className="text-sm text-white/60 uppercase tracking-wider">
-                  Seats
-                </p>
-                <p className="text-2xl font-bold text-white">7</p>
+              <p className="mt-3 text-xs text-white/50">
+                Representative example: {formatCurrency(model.typicalMonthly)}/mo with {formatCurrency(model.typicalDeposit)} deposit, {model.typicalTerm} months at {model.typicalApr}% APR. Finance subject to status.
+              </p>
+            </div>
+            <div className="model-hero-stage">
+              <div className="model-hero-glow" />
+
+              <div className="model-hero-car">
+                <Image
+                  src="/images/models/discovery.png"
+                  alt="Discovery Metropolitan Edition in Hakuba Silver - front three-quarter view"
+                  fill
+                  className="object-contain object-bottom"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
               </div>
             </div>
-            <p className="mt-3 text-xs text-white/50">
-              Representative example: {formatCurrency(model.typicalMonthly)}/mo with {formatCurrency(model.typicalDeposit)} deposit, {model.typicalTerm} months at {model.typicalApr}% APR. Finance subject to status.
-            </p>
           </div>
         </div>
       </section>
@@ -293,12 +321,6 @@ export default function DiscoveryPage() {
                     Torque
                   </th>
                   <th className="px-4 py-3 text-center font-display">
-                    0-60 mph
-                  </th>
-                  <th className="px-4 py-3 text-center font-display">
-                    Top Speed
-                  </th>
-                  <th className="px-4 py-3 text-center font-display">
                     CO2 (g/km)
                   </th>
                   <th className="px-4 py-3 text-center font-display">MPG</th>
@@ -311,8 +333,6 @@ export default function DiscoveryPage() {
                   </td>
                   <td className="px-4 py-4 text-center text-slate">249 PS</td>
                   <td className="px-4 py-4 text-center text-slate">570 Nm</td>
-                  <td className="px-4 py-4 text-center text-slate">7.8s</td>
-                  <td className="px-4 py-4 text-center text-slate">130 mph</td>
                   <td className="px-4 py-4 text-center text-slate">
                     209-224
                   </td>
@@ -324,8 +344,6 @@ export default function DiscoveryPage() {
                   </td>
                   <td className="px-4 py-4 text-center text-slate">300 PS</td>
                   <td className="px-4 py-4 text-center text-slate">650 Nm</td>
-                  <td className="px-4 py-4 text-center text-slate">6.5s</td>
-                  <td className="px-4 py-4 text-center text-slate">140 mph</td>
                   <td className="px-4 py-4 text-center text-slate">
                     209-228
                   </td>
@@ -337,8 +355,6 @@ export default function DiscoveryPage() {
                   </td>
                   <td className="px-4 py-4 text-center text-slate">360 PS</td>
                   <td className="px-4 py-4 text-center text-slate">500 Nm</td>
-                  <td className="px-4 py-4 text-center text-slate">6.5s</td>
-                  <td className="px-4 py-4 text-center text-slate">143 mph</td>
                   <td className="px-4 py-4 text-center text-slate">
                     238-252
                   </td>
@@ -350,8 +366,6 @@ export default function DiscoveryPage() {
                   </td>
                   <td className="px-4 py-4 text-center text-slate">400 PS</td>
                   <td className="px-4 py-4 text-center text-slate">550 Nm</td>
-                  <td className="px-4 py-4 text-center text-slate">5.9s</td>
-                  <td className="px-4 py-4 text-center text-slate">149 mph</td>
                   <td className="px-4 py-4 text-center text-slate">
                     238-252
                   </td>

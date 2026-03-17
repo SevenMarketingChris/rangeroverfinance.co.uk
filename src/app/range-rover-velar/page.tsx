@@ -1,9 +1,11 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import { getModelBySlug, formatCurrency } from "@/lib/models";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FinanceCalculator } from "@/components/FinanceCalculator";
 import { CTASection } from "@/components/CTASection";
 import { FAQSection } from "@/components/FAQSection";
+import { VehicleFinanceSchema, BreadcrumbSchema, FAQSchema } from "@/components/SchemaMarkup";
 
 const model = getModelBySlug("range-rover-velar")!;
 
@@ -17,8 +19,6 @@ const powertrains = [
     engine: "P250 Petrol MHEV",
     power: "249 PS",
     torque: "365 Nm",
-    zeroToSixty: "7.0s",
-    topSpeed: "135 mph",
     co2: "198-205",
     mpg: "31-33",
   },
@@ -26,8 +26,6 @@ const powertrains = [
     engine: "P400 Petrol MHEV",
     power: "400 PS",
     torque: "550 Nm",
-    zeroToSixty: "5.2s",
-    topSpeed: "155 mph",
     co2: "222-233",
     mpg: "28-30",
   },
@@ -35,8 +33,6 @@ const powertrains = [
     engine: "P400e PHEV",
     power: "404 PS",
     torque: "640 Nm",
-    zeroToSixty: "5.4s",
-    topSpeed: "140 mph",
     co2: "36-44",
     mpg: "108-130",
   },
@@ -44,8 +40,6 @@ const powertrains = [
     engine: "D200 Diesel MHEV",
     power: "204 PS",
     torque: "430 Nm",
-    zeroToSixty: "7.5s",
-    topSpeed: "132 mph",
     co2: "172-181",
     mpg: "41-44",
   },
@@ -152,49 +146,75 @@ const faqs = [
 export default function RangeRoverVelarPage() {
   return (
     <>
+      <VehicleFinanceSchema
+        modelName="Range Rover Velar"
+        priceFrom={model.priceFrom}
+        monthlyFrom={model.typicalMonthly}
+        apr={model.typicalApr}
+        url="https://www.rangeroverfinance.co.uk/range-rover-velar"
+      />
+      <BreadcrumbSchema items={[{ name: "Range Rover Velar", url: "https://www.rangeroverfinance.co.uk/range-rover-velar" }]} />
+      <FAQSchema faqs={faqs} />
+
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-racing-green via-racing-green-light to-racing-green py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: model.name }]} />
-          <div className="mt-8 max-w-3xl">
-            <p className="text-sand font-display text-sm uppercase tracking-widest mb-3">
-              2026 Model Year
-            </p>
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-display text-white leading-tight">
-              2026 {model.name} Finance
-            </h1>
-            <p className="mt-3 text-xl text-sand font-display">
-              The most design-focused Range Rover. Avant-garde luxury, financed to suit you.
-            </p>
-            <p className="mt-6 text-lg text-white/80 leading-relaxed max-w-2xl">
-              Finance the 2026 Range Rover Velar from {formatCurrency(model.typicalMonthly)} per
-              month. With its award-winning minimalist interior, flush deployable door handles, and
-              a silhouette that sits between the Evoque and Sport, the 2026 Velar is the design
-              statement of the Range Rover family. Explore PCP, HP, and lease options below.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-6">
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
-                <p className="text-sm text-white/60 uppercase tracking-wider">2026 Price From</p>
-                <p className="text-2xl font-bold text-white">{formatCurrency(model.priceFrom)}</p>
+          <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-sand font-display text-sm uppercase tracking-widest mb-3">
+                2026 Model Year
+              </p>
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-display text-white leading-tight">
+                2026 {model.name} Finance
+              </h1>
+              <p className="mt-3 text-xl text-sand font-display">
+                The most design-focused Range Rover. Avant-garde luxury, financed to suit you.
+              </p>
+              <p className="mt-6 text-lg text-white/80 leading-relaxed max-w-2xl">
+                Finance the 2026 Range Rover Velar from {formatCurrency(model.typicalMonthly)} per
+                month. With its award-winning minimalist interior, flush deployable door handles, and
+                a silhouette that sits between the Evoque and Sport, the 2026 Velar is the design
+                statement of the Range Rover family. Explore PCP, HP, and lease options below.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-6">
+                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                  <p className="text-sm text-white/60 uppercase tracking-wider">2026 Price From</p>
+                  <p className="text-2xl font-bold text-white">{formatCurrency(model.priceFrom)}</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                  <p className="text-sm text-white/60 uppercase tracking-wider">Monthly From</p>
+                  <p className="text-2xl font-bold text-sand">
+                    {formatCurrency(model.typicalMonthly)}/mo
+                  </p>
+                </div>
+                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                  <p className="text-sm text-white/60 uppercase tracking-wider">Deposit</p>
+                  <p className="text-2xl font-bold text-white">{formatCurrency(model.typicalDeposit)}</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                  <p className="text-sm text-white/60 uppercase tracking-wider">Typical APR</p>
+                  <p className="text-2xl font-bold text-white">{model.typicalApr}%</p>
+                </div>
               </div>
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
-                <p className="text-sm text-white/60 uppercase tracking-wider">Monthly From</p>
-                <p className="text-2xl font-bold text-sand">
-                  {formatCurrency(model.typicalMonthly)}/mo
-                </p>
-              </div>
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
-                <p className="text-sm text-white/60 uppercase tracking-wider">Deposit</p>
-                <p className="text-2xl font-bold text-white">{formatCurrency(model.typicalDeposit)}</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
-                <p className="text-sm text-white/60 uppercase tracking-wider">Typical APR</p>
-                <p className="text-2xl font-bold text-white">{model.typicalApr}%</p>
+              <p className="mt-3 text-xs text-white/50">
+                Representative example: {formatCurrency(model.typicalMonthly)}/mo with {formatCurrency(model.typicalDeposit)} deposit, {model.typicalTerm} months at {model.typicalApr}% APR. Finance subject to status.
+              </p>
+            </div>
+            <div className="model-hero-stage">
+              <div className="model-hero-glow" />
+
+              <div className="model-hero-car">
+                <Image
+                  src="/images/models/range-rover-velar.png"
+                  alt="Range Rover Velar Belgravia Satin in Carpathian Grey - front three-quarter view"
+                  fill
+                  className="object-contain object-bottom"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
               </div>
             </div>
-            <p className="mt-3 text-xs text-white/50">
-              Representative example: {formatCurrency(model.typicalMonthly)}/mo with {formatCurrency(model.typicalDeposit)} deposit, {model.typicalTerm} months at {model.typicalApr}% APR. Finance subject to status.
-            </p>
           </div>
         </div>
       </section>
@@ -271,8 +291,6 @@ export default function RangeRoverVelarPage() {
                   <th className="text-left py-3 px-4 font-display text-racing-green">Engine</th>
                   <th className="text-center py-3 px-4 font-display text-racing-green">Power</th>
                   <th className="text-center py-3 px-4 font-display text-racing-green">Torque</th>
-                  <th className="text-center py-3 px-4 font-display text-racing-green">0-60 mph</th>
-                  <th className="text-center py-3 px-4 font-display text-racing-green">Top Speed</th>
                   <th className="text-center py-3 px-4 font-display text-racing-green">
                     CO2 (g/km)
                   </th>
@@ -288,8 +306,6 @@ export default function RangeRoverVelarPage() {
                     <td className="py-4 px-4 font-semibold text-charcoal">{pt.engine}</td>
                     <td className="py-4 px-4 text-center text-slate">{pt.power}</td>
                     <td className="py-4 px-4 text-center text-slate">{pt.torque}</td>
-                    <td className="py-4 px-4 text-center text-slate">{pt.zeroToSixty}</td>
-                    <td className="py-4 px-4 text-center text-slate">{pt.topSpeed}</td>
                     <td className="py-4 px-4 text-center text-slate">{pt.co2}</td>
                     <td className="py-4 px-4 text-center text-slate">{pt.mpg}</td>
                   </tr>

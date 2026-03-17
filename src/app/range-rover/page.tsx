@@ -1,9 +1,11 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import { getModelBySlug, formatCurrency } from "@/lib/models";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FinanceCalculator } from "@/components/FinanceCalculator";
 import { CTASection } from "@/components/CTASection";
 import { FAQSection } from "@/components/FAQSection";
+import { VehicleFinanceSchema, BreadcrumbSchema, FAQSchema } from "@/components/SchemaMarkup";
 
 const model = getModelBySlug("range-rover")!;
 
@@ -50,41 +52,67 @@ const faqs = [
 export default function RangeRoverPage() {
   return (
     <>
+      <VehicleFinanceSchema
+        modelName="Range Rover"
+        priceFrom={model.priceFrom}
+        monthlyFrom={model.typicalMonthly}
+        apr={model.typicalApr}
+        url="https://www.rangeroverfinance.co.uk/range-rover"
+      />
+      <BreadcrumbSchema items={[{ name: "Range Rover", url: "https://www.rangeroverfinance.co.uk/range-rover" }]} />
+      <FAQSchema faqs={faqs} />
+
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-racing-green via-racing-green-light to-racing-green py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: model.name }]} />
-          <div className="mt-8 max-w-3xl">
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-display text-white leading-tight">
-              2026 {model.name} Finance
-            </h1>
-            <p className="mt-3 text-xl text-sand font-display">
-              The definitive luxury SUV. Compare PCP, HP and lease deals on the 2026 model year Range Rover.
-            </p>
-            <p className="mt-6 text-lg text-white/80 leading-relaxed max-w-2xl">
-              {model.heroDescription}
-            </p>
-            <div className="mt-8 flex flex-wrap gap-6">
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
-                <p className="text-sm text-white/60 uppercase tracking-wider">2026 Price From</p>
-                <p className="text-2xl font-bold text-white">{formatCurrency(model.priceFrom)}</p>
+          <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-display text-white leading-tight">
+                2026 {model.name} Finance
+              </h1>
+              <p className="mt-3 text-xl text-sand font-display">
+                The definitive luxury SUV. Compare PCP, HP and lease deals on the 2026 model year Range Rover.
+              </p>
+              <p className="mt-6 text-lg text-white/80 leading-relaxed max-w-2xl">
+                {model.heroDescription}
+              </p>
+              <div className="mt-8 flex flex-wrap gap-6">
+                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                  <p className="text-sm text-white/60 uppercase tracking-wider">2026 Price From</p>
+                  <p className="text-2xl font-bold text-white">{formatCurrency(model.priceFrom)}</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                  <p className="text-sm text-white/60 uppercase tracking-wider">Monthly From</p>
+                  <p className="text-2xl font-bold text-sand">{formatCurrency(model.typicalMonthly)}/mo</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                  <p className="text-sm text-white/60 uppercase tracking-wider">Deposit</p>
+                  <p className="text-2xl font-bold text-white">{formatCurrency(model.typicalDeposit)}</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                  <p className="text-sm text-white/60 uppercase tracking-wider">Typical APR</p>
+                  <p className="text-2xl font-bold text-white">{model.typicalApr}%</p>
+                </div>
               </div>
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
-                <p className="text-sm text-white/60 uppercase tracking-wider">Monthly From</p>
-                <p className="text-2xl font-bold text-sand">{formatCurrency(model.typicalMonthly)}/mo</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
-                <p className="text-sm text-white/60 uppercase tracking-wider">Deposit</p>
-                <p className="text-2xl font-bold text-white">{formatCurrency(model.typicalDeposit)}</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
-                <p className="text-sm text-white/60 uppercase tracking-wider">Typical APR</p>
-                <p className="text-2xl font-bold text-white">{model.typicalApr}%</p>
+              <p className="mt-3 text-xs text-white/50">
+                Representative example: {formatCurrency(model.typicalMonthly)}/mo with {formatCurrency(model.typicalDeposit)} deposit, {model.typicalTerm} months at {model.typicalApr}% APR. Finance subject to status.
+              </p>
+            </div>
+            <div className="model-hero-stage">
+              <div className="model-hero-glow" />
+
+              <div className="model-hero-car">
+                <Image
+                  src="/images/models/range-rover.png"
+                  alt="Range Rover SV in Santorini Black - front three-quarter view"
+                  fill
+                  className="object-contain object-bottom"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
               </div>
             </div>
-            <p className="mt-3 text-xs text-white/50">
-              Representative example: {formatCurrency(model.typicalMonthly)}/mo with {formatCurrency(model.typicalDeposit)} deposit, {model.typicalTerm} months at {model.typicalApr}% APR. Finance subject to status.
-            </p>
           </div>
         </div>
       </section>
@@ -237,8 +265,6 @@ export default function RangeRoverPage() {
                   <th className="text-left py-4 px-3 text-xs uppercase tracking-wider text-slate font-semibold">Engine</th>
                   <th className="text-center py-4 px-3 text-xs uppercase tracking-wider text-slate font-semibold">Power</th>
                   <th className="text-center py-4 px-3 text-xs uppercase tracking-wider text-slate font-semibold">Torque</th>
-                  <th className="text-center py-4 px-3 text-xs uppercase tracking-wider text-slate font-semibold">0-60 mph</th>
-                  <th className="text-center py-4 px-3 text-xs uppercase tracking-wider text-slate font-semibold">Top Speed</th>
                   <th className="text-center py-4 px-3 text-xs uppercase tracking-wider text-slate font-semibold">CO2 (g/km)</th>
                   <th className="text-center py-4 px-3 text-xs uppercase tracking-wider text-slate font-semibold">MPG</th>
                 </tr>
@@ -248,8 +274,6 @@ export default function RangeRoverPage() {
                   <td className="py-4 px-3 font-semibold text-charcoal">D350 Diesel</td>
                   <td className="py-4 px-3 text-center text-charcoal">346 PS</td>
                   <td className="py-4 px-3 text-center text-charcoal">700 Nm</td>
-                  <td className="py-4 px-3 text-center text-charcoal">6.1s</td>
-                  <td className="py-4 px-3 text-center text-charcoal">150 mph</td>
                   <td className="py-4 px-3 text-center text-charcoal">199-209</td>
                   <td className="py-4 px-3 text-center text-charcoal">35-37</td>
                 </tr>
@@ -257,8 +281,6 @@ export default function RangeRoverPage() {
                   <td className="py-4 px-3 font-semibold text-charcoal">P400 Mild Hybrid</td>
                   <td className="py-4 px-3 text-center text-charcoal">400 PS</td>
                   <td className="py-4 px-3 text-center text-charcoal">550 Nm</td>
-                  <td className="py-4 px-3 text-center text-charcoal">5.4s</td>
-                  <td className="py-4 px-3 text-center text-charcoal">155 mph</td>
                   <td className="py-4 px-3 text-center text-charcoal">231-243</td>
                   <td className="py-4 px-3 text-center text-charcoal">26-28</td>
                 </tr>
@@ -266,8 +288,6 @@ export default function RangeRoverPage() {
                   <td className="py-4 px-3 font-semibold text-charcoal">P530 V8 Twin Turbo</td>
                   <td className="py-4 px-3 text-center text-charcoal">530 PS</td>
                   <td className="py-4 px-3 text-center text-charcoal">750 Nm</td>
-                  <td className="py-4 px-3 text-center text-charcoal">4.2s</td>
-                  <td className="py-4 px-3 text-center text-charcoal">162 mph</td>
                   <td className="py-4 px-3 text-center text-charcoal">283-298</td>
                   <td className="py-4 px-3 text-center text-charcoal">22-23</td>
                 </tr>
@@ -278,8 +298,6 @@ export default function RangeRoverPage() {
                   </td>
                   <td className="py-4 px-3 text-center text-charcoal">460 PS</td>
                   <td className="py-4 px-3 text-center text-charcoal">620 Nm</td>
-                  <td className="py-4 px-3 text-center text-charcoal">5.3s</td>
-                  <td className="py-4 px-3 text-center text-charcoal">149 mph</td>
                   <td className="py-4 px-3 text-center text-sand font-semibold">18-24</td>
                   <td className="py-4 px-3 text-center text-charcoal">353-404</td>
                 </tr>
@@ -290,8 +308,6 @@ export default function RangeRoverPage() {
                   </td>
                   <td className="py-4 px-3 text-center text-charcoal">510 PS</td>
                   <td className="py-4 px-3 text-center text-charcoal">700 Nm</td>
-                  <td className="py-4 px-3 text-center text-charcoal">4.8s</td>
-                  <td className="py-4 px-3 text-center text-charcoal">155 mph</td>
                   <td className="py-4 px-3 text-center text-sand font-semibold">18-22</td>
                   <td className="py-4 px-3 text-center text-charcoal">353-404</td>
                 </tr>
@@ -887,7 +903,7 @@ export default function RangeRoverPage() {
                 <span className="text-sand font-bold text-lg">4.5/5</span>
               </div>
               <p className="text-slate text-sm leading-relaxed mb-4">
-                &ldquo;One of the most comfortable cars money can buy. The P550e performs impressively, with a 0-60 mph time of under five seconds.&rdquo;
+                &ldquo;One of the most comfortable cars money can buy. The P550e performs impressively.&rdquo;
               </p>
               <a
                 href="https://www.autocar.co.uk/car-review/land-rover/range-rover"
@@ -904,7 +920,7 @@ export default function RangeRoverPage() {
                 <span className="text-sand font-bold text-lg">4/5</span>
               </div>
               <p className="text-slate text-sm leading-relaxed mb-4">
-                &ldquo;The Range Rover is supremely comfortable, packed with luxury features and has a commanding road presence. The D350 diesel covers 0-62 mph in a brisk 6.0 seconds.&rdquo;
+                &ldquo;The Range Rover is supremely comfortable, packed with luxury features and has a commanding road presence.&rdquo;
               </p>
               <a
                 href="https://www.whatcar.com/land-rover/range-rover/4x4/review/"

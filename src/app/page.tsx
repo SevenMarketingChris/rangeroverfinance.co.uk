@@ -113,33 +113,10 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Car lineup — right */}
+            {/* Flagship Range Rover — right */}
             <div className="relative lg:w-[55%] h-[340px] sm:h-[400px] lg:h-[480px] mt-8 lg:mt-0">
-              {/* Back row */}
-              <div className="hero-car-slot absolute bottom-[18%] left-[2%] w-[24%] lg:w-[22%] opacity-50" style={{ animationDelay: "0.5s" }}>
-                <Image src="/images/models/discovery.png" alt="Discovery" fill className="object-contain object-bottom" sizes="12vw" />
-              </div>
-              <div className="hero-car-slot absolute bottom-[20%] left-[14%] w-[26%] lg:w-[24%] opacity-60" style={{ animationDelay: "0.4s" }}>
-                <Image src="/images/models/discovery-sport.png" alt="Discovery Sport" fill className="object-contain object-bottom" sizes="13vw" />
-              </div>
-              <div className="hero-car-slot absolute bottom-[20%] right-[14%] w-[26%] lg:w-[24%] opacity-60" style={{ animationDelay: "0.4s" }}>
-                <Image src="/images/models/range-rover-evoque.png" alt="Range Rover Evoque" fill className="object-contain object-bottom" sizes="13vw" />
-              </div>
-              <div className="hero-car-slot absolute bottom-[18%] right-[2%] w-[24%] lg:w-[22%] opacity-50" style={{ animationDelay: "0.5s" }}>
-                <Image src="/images/models/defender.png" alt="Defender" fill className="object-contain object-bottom" sizes="12vw" />
-              </div>
-
-              {/* Mid row */}
-              <div className="hero-car-slot absolute bottom-[6%] left-[6%] w-[32%] lg:w-[30%] opacity-80" style={{ animationDelay: "0.25s" }}>
-                <Image src="/images/models/range-rover-velar.png" alt="Range Rover Velar" fill className="object-contain object-bottom" sizes="16vw" />
-              </div>
-              <div className="hero-car-slot absolute bottom-[6%] right-[6%] w-[32%] lg:w-[30%] opacity-80" style={{ animationDelay: "0.25s" }}>
-                <Image src="/images/models/range-rover-sport.png" alt="Range Rover Sport" fill className="object-contain object-bottom" sizes="16vw" />
-              </div>
-
-              {/* Front center — the flagship */}
-              <div className="hero-car-slot hero-car-hero absolute bottom-0 left-1/2 -translate-x-1/2 w-[52%] lg:w-[46%]" style={{ animationDelay: "0.1s" }}>
-                <Image src="/images/models/range-rover.png" alt="Range Rover" fill className="object-contain object-bottom" sizes="25vw" priority />
+              <div className="hero-car-slot hero-car-hero absolute bottom-0 left-1/2 -translate-x-1/2 w-[85%] lg:w-[90%]" style={{ animationDelay: "0.1s" }}>
+                <Image src="/images/models/range-rover.png" alt="Range Rover" fill className="object-contain object-bottom" sizes="(max-width: 1024px) 70vw, 45vw" priority />
               </div>
             </div>
           </div>

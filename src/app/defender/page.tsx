@@ -1,9 +1,11 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import { getModelBySlug, formatCurrency } from "@/lib/models";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FinanceCalculator } from "@/components/FinanceCalculator";
 import { CTASection } from "@/components/CTASection";
 import { FAQSection } from "@/components/FAQSection";
+import { VehicleFinanceSchema, BreadcrumbSchema, FAQSchema } from "@/components/SchemaMarkup";
 
 const model = getModelBySlug("defender")!;
 
@@ -21,7 +23,7 @@ const faqs = [
   {
     question: "What is the 2026 Defender OCTA and can I finance it?",
     answer:
-      "The Defender OCTA is the flagship performance variant for 2026, available exclusively on the 110 body style. It features a twin-turbocharged V8 producing 635 PS and 750 Nm of torque, achieving 0-60 mph in just 3.8 seconds. The OCTA features 6-piston Brembo brakes, a unique wider-track body kit, 33-inch all-terrain tyres, a rally-inspired 4x4 system with rear e-diff, and bespoke suspension. Starting from approximately £120,000, the OCTA can be financed through PCP, HP or lease. Its exclusivity and limited production numbers are expected to support exceptional residual values, potentially making PCP monthly payments more attractive than the list price suggests.",
+      "The Defender OCTA is the flagship performance variant for 2026, available exclusively on the 110 body style. It features a twin-turbocharged V8 producing 635 PS and 750 Nm of torque. The OCTA features 6-piston Brembo brakes, a unique wider-track body kit, 33-inch all-terrain tyres, a rally-inspired 4x4 system with rear e-diff, and bespoke suspension. Starting from approximately £120,000, the OCTA can be financed through PCP, HP or lease. Its exclusivity and limited production numbers are expected to support exceptional residual values, potentially making PCP monthly payments more attractive than the list price suggests.",
   },
   {
     question: "Do 2026 Defenders really hold their value better than other SUVs?",
@@ -31,7 +33,7 @@ const faqs = [
   {
     question: "Is the 2026 Defender P400e PHEV worth considering on finance?",
     answer:
-      "The 2026 Defender P400e PHEV is well worth considering, particularly for company car drivers. Available exclusively on the 110 body style, it produces 404 PS with CO2 emissions from just 28 g/km, attracting some of the lowest BIK tax rates available. The electric-only range covers short commutes without using any fuel, while the combined petrol-electric powertrain provides strong performance (0-60 in 5.6 seconds). Official economy figures of 80-100 mpg are achievable if you charge regularly. The PHEV Defender retains its value well, making PCP payments competitive with pure petrol models. For private buyers, it makes most sense if you can charge at home.",
+      "The 2026 Defender P400e PHEV is well worth considering, particularly for company car drivers. Available exclusively on the 110 body style, it produces 404 PS with CO2 emissions from just 28 g/km, attracting some of the lowest BIK tax rates available. The electric-only range covers short commutes without using any fuel, while the combined petrol-electric powertrain provides strong performance. Official economy figures of 80-100 mpg are achievable if you charge regularly. The PHEV Defender retains its value well, making PCP payments competitive with pure petrol models. For private buyers, it makes most sense if you can charge at home.",
   },
   {
     question: "How much does 2026 Defender insurance cost on finance?",
@@ -48,50 +50,76 @@ const faqs = [
 export default function DefenderPage() {
   return (
     <>
+      <VehicleFinanceSchema
+        modelName="Land Rover Defender"
+        priceFrom={model.priceFrom}
+        monthlyFrom={model.typicalMonthly}
+        apr={model.typicalApr}
+        url="https://www.rangeroverfinance.co.uk/defender"
+      />
+      <BreadcrumbSchema items={[{ name: "Defender", url: "https://www.rangeroverfinance.co.uk/defender" }]} />
+      <FAQSchema faqs={faqs} />
+
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-racing-green via-racing-green-light to-racing-green py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: model.name }]} />
-          <div className="mt-8 max-w-3xl">
-            <p className="text-sand font-display text-sm uppercase tracking-widest mb-3">
-              2026 Model Year
-            </p>
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-display text-white leading-tight">
-              {model.fullName} Finance
-            </h1>
-            <p className="mt-3 text-xl text-sand font-display">
-              The unstoppable icon. Compare PCP, HP and lease deals on the 2026 Defender 90, 110, 130 and OCTA.
-            </p>
-            <p className="mt-6 text-lg text-white/80 leading-relaxed max-w-2xl">
-              The 2026 Land Rover Defender is the most capable and desirable Defender ever built.
-              From the nimble 2-door 90 to the 8-seat 130, and now crowned by the 635 PS OCTA,
-              there is a Defender for every ambition. Finance one from {formatCurrency(model.typicalMonthly)}/month.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-6">
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
-                <p className="text-sm text-white/60 uppercase tracking-wider">Price From</p>
-                <p className="text-2xl font-bold text-white">{formatCurrency(model.priceFrom)}</p>
+          <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-sand font-display text-sm uppercase tracking-widest mb-3">
+                2026 Model Year
+              </p>
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-display text-white leading-tight">
+                {model.fullName} Finance
+              </h1>
+              <p className="mt-3 text-xl text-sand font-display">
+                The unstoppable icon. Compare PCP, HP and lease deals on the 2026 Defender 90, 110, 130 and OCTA.
+              </p>
+              <p className="mt-6 text-lg text-white/80 leading-relaxed max-w-2xl">
+                The 2026 Land Rover Defender is the most capable and desirable Defender ever built.
+                From the nimble 2-door 90 to the 8-seat 130, and now crowned by the 635 PS OCTA,
+                there is a Defender for every ambition. Finance one from {formatCurrency(model.typicalMonthly)}/month.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-6">
+                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                  <p className="text-sm text-white/60 uppercase tracking-wider">Price From</p>
+                  <p className="text-2xl font-bold text-white">{formatCurrency(model.priceFrom)}</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                  <p className="text-sm text-white/60 uppercase tracking-wider">Monthly From</p>
+                  <p className="text-2xl font-bold text-sand">{formatCurrency(model.typicalMonthly)}/mo</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                  <p className="text-sm text-white/60 uppercase tracking-wider">Deposit</p>
+                  <p className="text-2xl font-bold text-white">{formatCurrency(model.typicalDeposit)}</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                  <p className="text-sm text-white/60 uppercase tracking-wider">Typical APR</p>
+                  <p className="text-2xl font-bold text-white">{model.typicalApr}%</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                  <p className="text-sm text-white/60 uppercase tracking-wider">Body Styles</p>
+                  <p className="text-2xl font-bold text-white">90 / 110 / 130</p>
+                </div>
               </div>
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
-                <p className="text-sm text-white/60 uppercase tracking-wider">Monthly From</p>
-                <p className="text-2xl font-bold text-sand">{formatCurrency(model.typicalMonthly)}/mo</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
-                <p className="text-sm text-white/60 uppercase tracking-wider">Deposit</p>
-                <p className="text-2xl font-bold text-white">{formatCurrency(model.typicalDeposit)}</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
-                <p className="text-sm text-white/60 uppercase tracking-wider">Typical APR</p>
-                <p className="text-2xl font-bold text-white">{model.typicalApr}%</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
-                <p className="text-sm text-white/60 uppercase tracking-wider">Body Styles</p>
-                <p className="text-2xl font-bold text-white">90 / 110 / 130</p>
+              <p className="mt-3 text-xs text-white/50">
+                Representative example: {formatCurrency(model.typicalMonthly)}/mo with {formatCurrency(model.typicalDeposit)} deposit, {model.typicalTerm} months at {model.typicalApr}% APR. Finance subject to status.
+              </p>
+            </div>
+            <div className="model-hero-stage">
+              <div className="model-hero-glow" />
+
+              <div className="model-hero-car">
+                <Image
+                  src="/images/models/defender.png"
+                  alt="Defender 110 OCTA in Borasco Grey - front three-quarter view"
+                  fill
+                  className="object-contain object-bottom"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
               </div>
             </div>
-            <p className="mt-3 text-xs text-white/50">
-              Representative example: {formatCurrency(model.typicalMonthly)}/mo with {formatCurrency(model.typicalDeposit)} deposit, {model.typicalTerm} months at {model.typicalApr}% APR. Finance subject to status.
-            </p>
           </div>
         </div>
       </section>
@@ -341,8 +369,6 @@ export default function DefenderPage() {
                   <th className="text-left px-4 py-3 font-display font-medium">Engine</th>
                   <th className="text-left px-4 py-3 font-display font-medium">Power</th>
                   <th className="text-left px-4 py-3 font-display font-medium">Torque</th>
-                  <th className="text-left px-4 py-3 font-display font-medium">0-60 mph</th>
-                  <th className="text-left px-4 py-3 font-display font-medium">Top Speed</th>
                   <th className="text-left px-4 py-3 font-display font-medium">CO2 (g/km)</th>
                   <th className="text-left px-4 py-3 font-display font-medium">MPG</th>
                   <th className="text-left px-4 py-3 font-display font-medium">Available On</th>
@@ -353,8 +379,6 @@ export default function DefenderPage() {
                   <td className="px-4 py-3 font-semibold text-charcoal">D250 Diesel</td>
                   <td className="px-4 py-3 text-slate">249 PS</td>
                   <td className="px-4 py-3 text-slate">570 Nm</td>
-                  <td className="px-4 py-3 text-slate">8.0s</td>
-                  <td className="px-4 py-3 text-slate">119 mph</td>
                   <td className="px-4 py-3 text-slate">234-253</td>
                   <td className="px-4 py-3 text-slate">29-31</td>
                   <td className="px-4 py-3 text-slate">90, 110, 130</td>
@@ -363,8 +387,6 @@ export default function DefenderPage() {
                   <td className="px-4 py-3 font-semibold text-charcoal">D300 Diesel</td>
                   <td className="px-4 py-3 text-slate">300 PS</td>
                   <td className="px-4 py-3 text-slate">650 Nm</td>
-                  <td className="px-4 py-3 text-slate">6.7s</td>
-                  <td className="px-4 py-3 text-slate">130 mph</td>
                   <td className="px-4 py-3 text-slate">234-257</td>
                   <td className="px-4 py-3 text-slate">28-31</td>
                   <td className="px-4 py-3 text-slate">90, 110, 130</td>
@@ -373,8 +395,6 @@ export default function DefenderPage() {
                   <td className="px-4 py-3 font-semibold text-charcoal">P300 Petrol</td>
                   <td className="px-4 py-3 text-slate">300 PS</td>
                   <td className="px-4 py-3 text-slate">400 Nm</td>
-                  <td className="px-4 py-3 text-slate">7.0s</td>
-                  <td className="px-4 py-3 text-slate">129 mph</td>
                   <td className="px-4 py-3 text-slate">254-268</td>
                   <td className="px-4 py-3 text-slate">24-26</td>
                   <td className="px-4 py-3 text-slate">90, 110</td>
@@ -383,8 +403,6 @@ export default function DefenderPage() {
                   <td className="px-4 py-3 font-semibold text-charcoal">P400 Mild Hybrid</td>
                   <td className="px-4 py-3 text-slate">400 PS</td>
                   <td className="px-4 py-3 text-slate">550 Nm</td>
-                  <td className="px-4 py-3 text-slate">5.8s</td>
-                  <td className="px-4 py-3 text-slate">149 mph</td>
                   <td className="px-4 py-3 text-slate">262-277</td>
                   <td className="px-4 py-3 text-slate">23-25</td>
                   <td className="px-4 py-3 text-slate">90, 110, 130</td>
@@ -393,8 +411,6 @@ export default function DefenderPage() {
                   <td className="px-4 py-3 font-semibold text-charcoal">P400e PHEV</td>
                   <td className="px-4 py-3 text-slate">404 PS</td>
                   <td className="px-4 py-3 text-slate">640 Nm</td>
-                  <td className="px-4 py-3 text-slate">5.6s</td>
-                  <td className="px-4 py-3 text-slate">130 mph</td>
                   <td className="px-4 py-3 text-slate">28-36</td>
                   <td className="px-4 py-3 text-slate">80-100</td>
                   <td className="px-4 py-3 text-slate">110 only</td>
@@ -403,8 +419,6 @@ export default function DefenderPage() {
                   <td className="px-4 py-3 font-semibold text-charcoal">V8 P525</td>
                   <td className="px-4 py-3 text-slate">525 PS</td>
                   <td className="px-4 py-3 text-slate">625 Nm</td>
-                  <td className="px-4 py-3 text-slate">4.9s</td>
-                  <td className="px-4 py-3 text-slate">155 mph</td>
                   <td className="px-4 py-3 text-slate">354</td>
                   <td className="px-4 py-3 text-slate">~18</td>
                   <td className="px-4 py-3 text-slate">90, 110</td>
@@ -413,8 +427,6 @@ export default function DefenderPage() {
                   <td className="px-4 py-3 font-bold text-racing-green">OCTA (V8 Twin Turbo)</td>
                   <td className="px-4 py-3 font-semibold text-racing-green">635 PS</td>
                   <td className="px-4 py-3 font-semibold text-racing-green">750 Nm</td>
-                  <td className="px-4 py-3 font-semibold text-racing-green">3.8s</td>
-                  <td className="px-4 py-3 font-semibold text-racing-green">155 mph</td>
                   <td className="px-4 py-3 font-semibold text-racing-green">~310</td>
                   <td className="px-4 py-3 font-semibold text-racing-green">~20</td>
                   <td className="px-4 py-3 font-semibold text-racing-green">110 only</td>
@@ -423,7 +435,7 @@ export default function DefenderPage() {
             </table>
           </div>
           <p className="text-xs text-slate text-center mt-4">
-            All figures quoted for the 110 body style where available. 0-60 mph times may vary by body style and specification.
+            All figures quoted for the 110 body style where available.
             All engines paired with ZF 8-speed automatic transmission and permanent all-wheel drive.
           </p>
         </div>
@@ -568,8 +580,7 @@ export default function DefenderPage() {
               <h3 className="text-lg font-display text-sand mb-3">Twin-Turbo V8 Power</h3>
               <p className="text-sm text-white/80 leading-relaxed">
                 The OCTA's 4.4-litre twin-turbocharged V8 produces 635 PS and 750 Nm of torque,
-                propelling the Defender from 0-60 mph in just 3.8 seconds -- faster than many
-                sports cars. Top speed is electronically limited to 155 mph. This is a Defender
+                delivering extraordinary performance for a vehicle of this size. This is a Defender
                 that rewrites the performance rulebook.
               </p>
             </div>
@@ -600,10 +611,6 @@ export default function DefenderPage() {
             <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4 text-center">
               <p className="text-xs text-white/60 uppercase tracking-wider mb-1">Torque</p>
               <p className="text-2xl font-bold text-white">750 Nm</p>
-            </div>
-            <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4 text-center">
-              <p className="text-xs text-white/60 uppercase tracking-wider mb-1">0-60 mph</p>
-              <p className="text-2xl font-bold text-sand">3.8s</p>
             </div>
             <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4 text-center">
               <p className="text-xs text-white/60 uppercase tracking-wider mb-1">Price From</p>
@@ -1070,7 +1077,7 @@ export default function DefenderPage() {
                 <span className="text-sand font-bold text-lg">9/10</span>
               </div>
               <p className="text-slate text-sm leading-relaxed mb-4">
-                &ldquo;For family buyers and off-road enthusiasts alike, the Defender 110 is just about unbeatable. The OCTA with 635 PS V8 does 0-60 in 3.8 seconds.&rdquo;
+                &ldquo;For family buyers and off-road enthusiasts alike, the Defender 110 is just about unbeatable.&rdquo;
               </p>
               <a
                 href="https://www.carwow.co.uk/land-rover/defender-110"

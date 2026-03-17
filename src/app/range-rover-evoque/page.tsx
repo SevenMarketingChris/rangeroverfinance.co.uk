@@ -1,9 +1,11 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import { getModelBySlug, formatCurrency } from "@/lib/models";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FinanceCalculator } from "@/components/FinanceCalculator";
 import { CTASection } from "@/components/CTASection";
 import { FAQSection } from "@/components/FAQSection";
+import { VehicleFinanceSchema, BreadcrumbSchema, FAQSchema } from "@/components/SchemaMarkup";
 
 const model = getModelBySlug("range-rover-evoque")!;
 
@@ -50,8 +52,6 @@ const powertrains = [
     engine: "P200 Petrol MHEV",
     power: "200 PS",
     torque: "340 Nm",
-    acceleration: "8.5s",
-    topSpeed: "129 mph",
     co2: "175-182",
     mpg: "35-37",
   },
@@ -59,8 +59,6 @@ const powertrains = [
     engine: "P250 Petrol MHEV",
     power: "249 PS",
     torque: "365 Nm",
-    acceleration: "7.0s",
-    topSpeed: "143 mph",
     co2: "175-182",
     mpg: "35-37",
   },
@@ -68,8 +66,6 @@ const powertrains = [
     engine: "P300e PHEV",
     power: "309 PS",
     torque: "540 Nm",
-    acceleration: "6.1s",
-    topSpeed: "130 mph",
     co2: "32-36",
     mpg: "141-177",
   },
@@ -77,8 +73,6 @@ const powertrains = [
     engine: "D165 Diesel MHEV",
     power: "163 PS",
     torque: "380 Nm",
-    acceleration: "9.6s",
-    topSpeed: "121 mph",
     co2: "149-158",
     mpg: "47-50",
   },
@@ -150,61 +144,87 @@ const trimLevels = [
 export default function RangeRoverEvoquePage() {
   return (
     <>
+      <VehicleFinanceSchema
+        modelName="Range Rover Evoque"
+        priceFrom={model.priceFrom}
+        monthlyFrom={model.typicalMonthly}
+        apr={model.typicalApr}
+        url="https://www.rangeroverfinance.co.uk/range-rover-evoque"
+      />
+      <BreadcrumbSchema items={[{ name: "Range Rover Evoque", url: "https://www.rangeroverfinance.co.uk/range-rover-evoque" }]} />
+      <FAQSchema faqs={faqs} />
+
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-racing-green via-racing-green-light to-racing-green py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: model.name }]} />
-          <div className="mt-8 max-w-3xl">
-            <p className="text-sand font-display text-sm uppercase tracking-widest mb-3">
-              2026 Model Year
-            </p>
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-display text-white leading-tight">
-              {model.name} Finance
-            </h1>
-            <p className="mt-3 text-xl text-sand font-display">
-              The most accessible Range Rover. Compact luxury SUV finance from
-              £389/month.
-            </p>
-            <p className="mt-6 text-lg text-white/80 leading-relaxed max-w-2xl">
-              Finance the 2026 Range Rover Evoque — the compact crossover SUV
-              that brings Range Rover design, capability, and craftsmanship to a
-              city-friendly footprint. Available with petrol MHEV, diesel MHEV,
-              and plug-in hybrid powertrains across five carefully curated trim
-              levels.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-6">
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
-                <p className="text-sm text-white/60 uppercase tracking-wider">
-                  Price From
-                </p>
-                <p className="text-2xl font-bold text-white">
-                  {formatCurrency(model.priceFrom)}
-                </p>
+          <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-sand font-display text-sm uppercase tracking-widest mb-3">
+                2026 Model Year
+              </p>
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-display text-white leading-tight">
+                {model.name} Finance
+              </h1>
+              <p className="mt-3 text-xl text-sand font-display">
+                The most accessible Range Rover. Compact luxury SUV finance from
+                £389/month.
+              </p>
+              <p className="mt-6 text-lg text-white/80 leading-relaxed max-w-2xl">
+                Finance the 2026 Range Rover Evoque — the compact crossover SUV
+                that brings Range Rover design, capability, and craftsmanship to a
+                city-friendly footprint. Available with petrol MHEV, diesel MHEV,
+                and plug-in hybrid powertrains across five carefully curated trim
+                levels.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-6">
+                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                  <p className="text-sm text-white/60 uppercase tracking-wider">
+                    Price From
+                  </p>
+                  <p className="text-2xl font-bold text-white">
+                    {formatCurrency(model.priceFrom)}
+                  </p>
+                </div>
+                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                  <p className="text-sm text-white/60 uppercase tracking-wider">
+                    Monthly From
+                  </p>
+                  <p className="text-2xl font-bold text-sand">
+                    {formatCurrency(model.typicalMonthly)}/mo
+                  </p>
+                </div>
+                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                  <p className="text-sm text-white/60 uppercase tracking-wider">Deposit</p>
+                  <p className="text-2xl font-bold text-white">{formatCurrency(model.typicalDeposit)}</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
+                  <p className="text-sm text-white/60 uppercase tracking-wider">
+                    Typical APR
+                  </p>
+                  <p className="text-2xl font-bold text-white">
+                    {model.typicalApr}%
+                  </p>
+                </div>
               </div>
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
-                <p className="text-sm text-white/60 uppercase tracking-wider">
-                  Monthly From
-                </p>
-                <p className="text-2xl font-bold text-sand">
-                  {formatCurrency(model.typicalMonthly)}/mo
-                </p>
-              </div>
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
-                <p className="text-sm text-white/60 uppercase tracking-wider">Deposit</p>
-                <p className="text-2xl font-bold text-white">{formatCurrency(model.typicalDeposit)}</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur rounded-lg px-6 py-4">
-                <p className="text-sm text-white/60 uppercase tracking-wider">
-                  Typical APR
-                </p>
-                <p className="text-2xl font-bold text-white">
-                  {model.typicalApr}%
-                </p>
+              <p className="mt-3 text-xs text-white/50">
+                Representative example: {formatCurrency(model.typicalMonthly)}/mo with {formatCurrency(model.typicalDeposit)} deposit, {model.typicalTerm} months at {model.typicalApr}% APR. Finance subject to status.
+              </p>
+            </div>
+            <div className="model-hero-stage">
+              <div className="model-hero-glow" />
+
+              <div className="model-hero-car">
+                <Image
+                  src="/images/models/range-rover-evoque.png"
+                  alt="Range Rover Evoque Autobiography in Carpathian Grey - front three-quarter view"
+                  fill
+                  className="object-contain object-bottom"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
               </div>
             </div>
-            <p className="mt-3 text-xs text-white/50">
-              Representative example: {formatCurrency(model.typicalMonthly)}/mo with {formatCurrency(model.typicalDeposit)} deposit, {model.typicalTerm} months at {model.typicalApr}% APR. Finance subject to status.
-            </p>
           </div>
         </div>
       </section>
@@ -285,12 +305,6 @@ export default function RangeRoverEvoquePage() {
                     Torque
                   </th>
                   <th className="text-center py-4 px-3 font-display font-medium">
-                    0-60 mph
-                  </th>
-                  <th className="text-center py-4 px-3 font-display font-medium">
-                    Top Speed
-                  </th>
-                  <th className="text-center py-4 px-3 font-display font-medium">
                     CO2 (g/km)
                   </th>
                   <th className="text-center py-4 px-3 font-display font-medium rounded-tr-lg">
@@ -312,12 +326,6 @@ export default function RangeRoverEvoquePage() {
                     </td>
                     <td className="py-4 px-3 text-center text-slate">
                       {pt.torque}
-                    </td>
-                    <td className="py-4 px-3 text-center text-slate">
-                      {pt.acceleration}
-                    </td>
-                    <td className="py-4 px-3 text-center text-slate">
-                      {pt.topSpeed}
                     </td>
                     <td className="py-4 px-3 text-center text-slate">
                       {pt.co2}
