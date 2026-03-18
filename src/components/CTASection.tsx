@@ -1,10 +1,10 @@
 import Link from "next/link";
 
 export function CTASection({
-  title = "Ready to Explore Your Finance Options?",
-  description = "Get a free, no-obligation quote tailored to your circumstances.",
-  buttonText = "Get Your Free Quote",
-  buttonHref = "/apply",
+  title = "Explore Our Free Finance Tools",
+  description = "Use our calculators, guides, and comparison tools to research Range Rover finance options.",
+  buttonText = "Use Calculator",
+  buttonHref = "/calculator",
 }: {
   title?: string;
   description?: string;

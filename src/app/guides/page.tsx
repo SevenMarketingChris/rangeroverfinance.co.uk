@@ -165,7 +165,7 @@ export default function GuidesHub() {
 
       <CTASection
         title="Need Personalised Advice?"
-        description="Our finance specialists can help you find the right deal for your circumstances. Get a free, no-obligation quote today."
+        description="Use our free calculators and comparison tools to find the right finance option for your circumstances."
       />
     </>
   );

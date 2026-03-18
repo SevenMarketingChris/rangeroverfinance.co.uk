@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTASection } from "@/components/CTASection";
 import { FAQSection } from "@/components/FAQSection";
+import { BreadcrumbSchema, FAQSchema } from "@/components/SchemaMarkup";
 import { formatCurrency } from "@/lib/models";
 
 export const metadata: Metadata = {
@@ -130,6 +131,9 @@ const faqs = [
 export default function BusinessFinancePage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Business Finance", url: "https://www.rangeroverfinance.co.uk/business-finance" }]} />
+      <FAQSchema faqs={faqs} />
+
       {/* Hero Section */}
       <section className="relative bg-racing-green-dark overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-racing-green-dark via-racing-green to-racing-green-light opacity-90" />
@@ -423,10 +427,10 @@ export default function BusinessFinancePage() {
 
       {/* CTA */}
       <CTASection
-        title="Ready to Explore Business Finance?"
-        description="Get a free, no-obligation business finance quote for your Range Rover. Our team understands the tax landscape and will help you choose the most efficient structure for your business."
-        buttonText="Get Your Business Quote"
-        buttonHref="/apply"
+        title="Estimate Your Business Finance Payments"
+        description="Use our free calculator to explore monthly payment estimates for Range Rover business finance across different models and terms."
+        buttonText="Use Calculator"
+        buttonHref="/calculator"
       />
     </>
   );

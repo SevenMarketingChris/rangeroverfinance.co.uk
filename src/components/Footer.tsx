@@ -105,8 +105,6 @@ export function Footer() {
           <p className="mt-6 text-[11px] text-white/15 leading-relaxed max-w-4xl">
             Range Rover Finance is not affiliated with Jaguar Land Rover Limited.
             Range Rover, Land Rover, Discovery and Defender are registered trademarks of Jaguar Land Rover Limited.
-            Finance subject to status. Terms and conditions apply. Applicants must be 18+.
-            We act as a credit broker, not a lender.
           </p>
         </div>
       </div>

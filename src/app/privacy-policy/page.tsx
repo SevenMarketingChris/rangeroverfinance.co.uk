@@ -4,7 +4,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 export const metadata: Metadata = {
   title: "Privacy Policy | Range Rover Finance",
   description:
-    "Privacy policy for Range Rover Finance. Learn how we collect, use and protect your personal data in accordance with GDPR and UK data protection law.",
+    "Privacy policy for Range Rover Finance. Learn how we collect, use and protect your data when you use our website, in accordance with GDPR and UK data protection law.",
 };
 
 export default function PrivacyPolicyPage() {
@@ -55,13 +55,8 @@ export default function PrivacyPolicyPage() {
 
               <h3 className="font-semibold text-charcoal mt-4 mb-2">3.1 Information you provide directly</h3>
               <ul className="list-disc pl-5 space-y-1">
-                <li>Full name (first name and surname)</li>
-                <li>Email address</li>
-                <li>Telephone number</li>
-                <li>Vehicle preferences (model, finance type, budget range)</li>
-                <li>Deposit amount and desired monthly budget</li>
-                <li>Employment status</li>
-                <li>Any additional information you include in free-text fields</li>
+                <li>Email address (if you contact us)</li>
+                <li>Any information you include in correspondence with us</li>
               </ul>
 
               <h3 className="font-semibold text-charcoal mt-4 mb-2">3.2 Information collected automatically</h3>
@@ -78,14 +73,12 @@ export default function PrivacyPolicyPage() {
 
             <div>
               <h2 className="text-xl font-display text-charcoal mb-3">4. How We Use Your Data</h2>
-              <p className="mb-3">We use your personal data for the following purposes:</p>
+              <p className="mb-3">We use your data for the following purposes:</p>
               <ul className="list-disc pl-5 space-y-1">
-                <li>To process your finance enquiry and provide you with relevant quotations</li>
-                <li>To share your details with FCA-regulated finance brokers and lenders who can assist with your enquiry</li>
-                <li>To communicate with you about your enquiry by telephone, email or other contact method you have provided</li>
-                <li>To improve our website, tools and services</li>
+                <li>To respond to any enquiries or correspondence you send us</li>
+                <li>To improve our website, tools and content</li>
                 <li>To analyse usage patterns and optimise user experience</li>
-                <li>To comply with legal and regulatory obligations</li>
+                <li>To comply with legal obligations</li>
               </ul>
             </div>
 
@@ -94,16 +87,15 @@ export default function PrivacyPolicyPage() {
               <p className="mb-3">We process your personal data on the following legal bases:</p>
               <ul className="list-disc pl-5 space-y-2">
                 <li>
-                  <strong className="text-charcoal">Consent:</strong> When you submit an enquiry form, you consent to us
+                  <strong className="text-charcoal">Consent:</strong> When you contact us, you consent to us
                   processing your data for the purposes described. You may withdraw consent at any time.
                 </li>
                 <li>
                   <strong className="text-charcoal">Legitimate interests:</strong> We have a legitimate interest in analysing
-                  Site usage to improve our services, provided this does not override your rights and freedoms.
+                  Site usage to improve our content and tools, provided this does not override your rights and freedoms.
                 </li>
                 <li>
-                  <strong className="text-charcoal">Legal obligation:</strong> We may process data where required by law,
-                  for example to comply with anti-money laundering regulations or FCA requirements.
+                  <strong className="text-charcoal">Legal obligation:</strong> We may process data where required by law.
                 </li>
               </ul>
             </div>
@@ -112,11 +104,6 @@ export default function PrivacyPolicyPage() {
               <h2 className="text-xl font-display text-charcoal mb-3">6. Third-Party Sharing</h2>
               <p className="mb-3">We may share your personal data with the following categories of third parties:</p>
               <ul className="list-disc pl-5 space-y-2">
-                <li>
-                  <strong className="text-charcoal">Finance brokers and lenders:</strong> When you submit a finance
-                  enquiry, we share your details with FCA-regulated finance partners who can provide you with
-                  quotations. These partners become independent data controllers for the data they receive.
-                </li>
                 <li>
                   <strong className="text-charcoal">Analytics providers:</strong> We use analytics services (such as
                   Google Analytics) to understand how visitors use our Site. These services may collect data
@@ -137,7 +124,7 @@ export default function PrivacyPolicyPage() {
               <h2 className="text-xl font-display text-charcoal mb-3">7. Data Retention</h2>
               <p className="mb-3">We retain your personal data for the following periods:</p>
               <ul className="list-disc pl-5 space-y-1">
-                <li>Finance enquiry data: 36 months from the date of your last interaction with us</li>
+                <li>Correspondence data: 12 months from the date of your last interaction with us</li>
                 <li>Analytics data: 26 months (in line with Google Analytics default retention)</li>
                 <li>Cookie consent records: 12 months from the date consent was given</li>
               </ul>

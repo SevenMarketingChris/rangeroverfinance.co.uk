@@ -167,11 +167,11 @@ export default function RangeRoverEvoquePage() {
                 {model.name} Finance
               </h1>
               <p className="mt-3 text-xl text-sand font-display">
-                The most accessible Range Rover. Compact luxury SUV finance from
+                The most accessible Range Rover. Compact luxury SUV, estimated from
                 £389/month.
               </p>
               <p className="mt-6 text-lg text-white/80 leading-relaxed max-w-2xl">
-                Finance the 2026 Range Rover Evoque — the compact crossover SUV
+                Explore the 2026 Range Rover Evoque — the compact crossover SUV
                 that brings Range Rover design, capability, and craftsmanship to a
                 city-friendly footprint. Available with petrol MHEV, diesel MHEV,
                 and plug-in hybrid powertrains across five carefully curated trim
@@ -195,10 +195,6 @@ export default function RangeRoverEvoquePage() {
                   </p>
                 </div>
                 <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
-                  <p className="text-sm text-white/60 uppercase tracking-wider">Deposit</p>
-                  <p className="text-2xl font-bold text-white">{formatCurrency(model.typicalDeposit)}</p>
-                </div>
-                <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
                   <p className="text-sm text-white/60 uppercase tracking-wider">
                     Typical APR
                   </p>
@@ -207,9 +203,6 @@ export default function RangeRoverEvoquePage() {
                   </p>
                 </div>
               </div>
-              <p className="mt-3 text-xs text-white/50">
-                Representative example: {formatCurrency(model.typicalMonthly)}/mo with {formatCurrency(model.typicalDeposit)} deposit, {model.typicalTerm} months at {model.typicalApr}% APR. Finance subject to status.
-              </p>
             </div>
             <div className="model-hero-stage">
               <div className="model-hero-glow" />
@@ -667,8 +660,8 @@ export default function RangeRoverEvoquePage() {
             </div>
           </div>
           <p className="text-xs text-slate text-center mt-6">
-            Representative examples only. Actual rates depend on individual
-            circumstances and credit profile. Figures based on a 2026{" "}
+            Illustrative figures only. Actual rates depend on individual
+            circumstances and credit profile. Use our calculator to estimate payments for a 2026{" "}
             {model.name} priced from {formatCurrency(model.priceFrom)}.
           </p>
         </div>
@@ -1078,10 +1071,10 @@ export default function RangeRoverEvoquePage() {
 
       {/* CTA */}
       <CTASection
-        title="Ready to Finance Your 2026 Range Rover Evoque?"
-        description="Discover the most affordable route into Range Rover ownership. Get a free, no-obligation finance quote for the 2026 Evoque today — compare PCP, HP, and lease options tailored to your budget."
-        buttonText="Get Your Free Quote"
-        buttonHref="/apply"
+        title="Explore 2026 Range Rover Evoque Finance Options"
+        description="The most affordable route into Range Rover ownership. Compare PCP, HP, and lease costs for the 2026 Evoque with our finance calculator."
+        buttonText="Use Calculator"
+        buttonHref="/calculator"
       />
     </>
   );

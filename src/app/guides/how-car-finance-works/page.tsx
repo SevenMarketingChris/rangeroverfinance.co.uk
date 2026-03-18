@@ -29,7 +29,7 @@ const faqs = [
   {
     question: "What is the difference between a car finance broker and a dealer?",
     answer:
-      "A dealer typically offers finance through one or two lenders (usually the manufacturer's captive finance company and perhaps one alternative). A finance broker searches the whole market — sometimes dozens of lenders — to find the best rate and terms for your circumstances. Brokers are particularly useful for applicants with non-standard credit profiles or those financing high-value vehicles like Range Rovers.",
+      "A dealer typically offers finance through one or two lenders (usually the manufacturer's captive finance company and perhaps one alternative). A finance broker searches the whole market — sometimes dozens of lenders — to find the best rate and terms for your circumstances. Brokers can be particularly useful for applicants with non-standard credit profiles or those financing high-value vehicles like Range Rovers.",
   },
   {
     question: "Can I get car finance for a used vehicle?",
@@ -377,8 +377,10 @@ export default function HowCarFinanceWorks() {
       <FAQSection faqs={faqs} />
 
       <CTASection
-        title="Ready to Explore Your Finance Options?"
-        description="Whether you are a first-time buyer or an experienced motorist, our specialists can help you find the right finance for your Range Rover."
+        title="Explore Your Finance Options"
+        description="Use our free calculator to estimate monthly payments for PCP, HP and lease options across all Range Rover models."
+        buttonText="Use Calculator"
+        buttonHref="/calculator"
       />
     </>
   );

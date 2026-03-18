@@ -74,8 +74,8 @@ export default function RangeRoverSportPage() {
               </h1>
               <p className="mt-3 text-xl text-sand font-display">{model.tagline}</p>
               <p className="mt-6 text-lg text-white/80 leading-relaxed max-w-2xl">
-                Compare PCP, HP and lease deals on the 2026 Range Rover Sport. From the efficient D250 diesel
-                to the blistering 530 PS V8, find the right powertrain and the right finance package for
+                Research PCP, HP and lease costs for the 2026 Range Rover Sport. From the efficient D250 diesel
+                to the blistering 530 PS V8, explore every powertrain and estimate monthly payments for
                 the most dynamic Range Rover ever built.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
@@ -88,17 +88,10 @@ export default function RangeRoverSportPage() {
                   <p className="text-2xl font-bold text-sand">{formatCurrency(model.typicalMonthly)}/mo</p>
                 </div>
                 <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
-                  <p className="text-sm text-white/60 uppercase tracking-wider">Deposit</p>
-                  <p className="text-2xl font-bold text-white">{formatCurrency(model.typicalDeposit)}</p>
-                </div>
-                <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
                   <p className="text-sm text-white/60 uppercase tracking-wider">Typical APR</p>
                   <p className="text-2xl font-bold text-white">{model.typicalApr}%</p>
                 </div>
               </div>
-              <p className="mt-3 text-xs text-white/50">
-                Representative example: {formatCurrency(model.typicalMonthly)}/mo with {formatCurrency(model.typicalDeposit)} deposit, {model.typicalTerm} months at {model.typicalApr}% APR. Finance subject to status.
-              </p>
             </div>
             <div className="model-hero-stage">
               <div className="model-hero-glow" />
@@ -152,7 +145,7 @@ export default function RangeRoverSportPage() {
             <p className="text-slate leading-relaxed">
               Whether you are a company car driver drawn to the P510e&apos;s ultra-low BIK rates, a
               performance enthusiast eyeing the V8, or a family buyer who wants Range Rover comfort with
-              a more manageable footprint, the 2026 Sport has a configuration — and a finance deal — to match.
+              a more manageable footprint, the 2026 Sport has a configuration to match.
             </p>
           </div>
         </div>
@@ -661,8 +654,7 @@ export default function RangeRoverSportPage() {
             </div>
           </div>
           <p className="text-xs text-slate text-center mt-6">
-            Representative examples only. Actual rates depend on individual circumstances and credit profile. Figures based on
-            a 2026 {model.name} priced from {formatCurrency(model.priceFrom)}.
+            Illustrative figures only. Actual rates depend on individual circumstances and credit profile. Use our calculator to estimate payments for a 2026 {model.name} priced from {formatCurrency(model.priceFrom)}.
           </p>
         </div>
       </section>
@@ -1011,10 +1003,10 @@ export default function RangeRoverSportPage() {
 
       {/* CTA */}
       <CTASection
-        title="Ready to Finance Your 2026 Range Rover Sport?"
-        description="Our specialists will find the most competitive PCP, HP or lease deal for your 2026 Range Rover Sport. Compare all five engines across every trim level — free quotes with no obligation."
-        buttonText="Get Your Free Quote"
-        buttonHref="/apply"
+        title="Explore 2026 Range Rover Sport Finance Options"
+        description="Compare PCP, HP and lease costs for all five engines across every 2026 Range Rover Sport trim level with our finance calculator."
+        buttonText="Use Calculator"
+        buttonHref="/calculator"
       />
     </>
   );

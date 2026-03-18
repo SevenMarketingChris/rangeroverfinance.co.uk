@@ -4,6 +4,7 @@ import { FinanceCalculator } from "@/components/FinanceCalculator";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTASection } from "@/components/CTASection";
 import { FAQSection } from "@/components/FAQSection";
+import { BreadcrumbSchema, FAQSchema } from "@/components/SchemaMarkup";
 import { models, formatCurrency } from "@/lib/models";
 
 export const metadata: Metadata = {
@@ -65,6 +66,9 @@ const faqs = [
 export default function LeaseDealsPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Lease Deals", url: "https://www.rangeroverfinance.co.uk/lease-deals" }]} />
+      <FAQSchema faqs={faqs} />
+
       {/* Hero Section */}
       <section className="relative bg-racing-green-dark overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-racing-green-dark via-racing-green to-racing-green-light opacity-90" />
@@ -188,7 +192,7 @@ export default function LeaseDealsPage() {
               For private individuals who want flexibility and the possibility of ownership, PCP is usually the
               better choice. For businesses seeking maximum tax efficiency and cost certainty, business contract
               hire is typically the superior option. The right choice depends entirely on your personal or
-              business circumstances, and our team can help you compare both options side by side.
+              business circumstances. Use our calculator to compare both options side by side.
             </p>
           </div>
         </div>
@@ -238,7 +242,7 @@ export default function LeaseDealsPage() {
           </div>
           <p className="mt-4 text-xs text-slate text-center">
             Figures shown are representative personal lease (PCH) examples including VAT. Business lease (BCH) prices
-            exclude VAT. Actual quotes will vary based on specification, mileage and term.
+            exclude VAT. Actual rates and payments will vary based on specification, mileage and term.
           </p>
         </div>
       </section>
@@ -271,10 +275,10 @@ export default function LeaseDealsPage() {
 
       {/* CTA */}
       <CTASection
-        title="Ready to Compare Lease Deals?"
-        description="Get a free, no-obligation lease quote for personal or business contract hire. Our team will source the most competitive deal for your chosen Range Rover."
-        buttonText="Get Your Lease Quote"
-        buttonHref="/apply"
+        title="Estimate Your Lease Payments"
+        description="Use our free calculator to compare lease monthly payments across different Range Rover models and terms."
+        buttonText="Use Calculator"
+        buttonHref="/calculator"
       />
     </>
   );

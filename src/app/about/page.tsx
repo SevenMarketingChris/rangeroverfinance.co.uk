@@ -4,13 +4,13 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTASection } from "@/components/CTASection";
 
 export const metadata: Metadata = {
-  title: "About Range Rover Finance | Independent Finance Comparison",
+  title: "About Range Rover Finance | Free Tools & Guides for Finance Research",
   description:
-    "Range Rover Finance is an independent finance comparison service helping buyers find the best PCP, HP and lease deals. We are not a dealer or lender — we work for you.",
+    "Range Rover Finance provides free calculators, comparison tools and guides to help you research PCP, HP and lease options across the Range Rover and Land Rover lineup.",
   openGraph: {
-    title: "About Range Rover Finance | Independent Finance Comparison",
+    title: "About Range Rover Finance | Free Tools & Guides",
     description:
-      "Independent finance comparison service helping buyers find the best Range Rover finance deals across PCP, HP and lease options.",
+      "Free calculators, comparison tools and guides to help you research Range Rover finance options across PCP, HP and lease.",
     type: "website",
     url: "https://rangeroverfinance.co.uk/about",
   },
@@ -28,7 +28,7 @@ export default function AboutPage() {
               About Range Rover Finance
             </h1>
             <p className="text-white/70 text-lg leading-relaxed">
-              Independent, impartial finance comparison — helping you find the best deal on your next Range Rover.
+              Free tools, calculators and guides to help you research Range Rover finance options.
             </p>
           </div>
         </div>
@@ -40,33 +40,30 @@ export default function AboutPage() {
           <div className="prose-custom">
             <h2 className="text-2xl font-display text-charcoal mb-4">Who We Are</h2>
             <p className="text-slate leading-relaxed mb-6">
-              Range Rover Finance is an independent finance comparison service dedicated to helping buyers
-              navigate the complex world of vehicle finance. We are not a dealership. We are not a lender.
-              We are on your side — working to find the most competitive finance options from across the
-              market so you do not have to.
+              Range Rover Finance is an independent information resource dedicated to helping buyers
+              research and understand vehicle finance. We provide free tools, calculators, comparison
+              features and in-depth guides covering PCP, HP, lease and other finance options for the
+              complete Range Rover and Land Rover lineup.
             </p>
             <p className="text-slate leading-relaxed mb-10">
-              Our team has extensive experience in automotive finance, having collectively spent over two
-              decades advising buyers on PCP, HP, lease and specialist finance products. We understand that
-              financing a premium vehicle is a significant decision, and we believe everyone deserves access
-              to clear, honest information and competitive rates.
+              Our team has extensive experience in automotive finance, and we use that knowledge to
+              create clear, practical resources. We believe everyone deserves access to straightforward
+              information when researching how to finance a premium vehicle.
             </p>
 
             <h2 className="text-2xl font-display text-charcoal mb-4">Our Mission</h2>
             <p className="text-slate leading-relaxed mb-6">
               The vehicle finance market can be opaque. Dealers have their own finance products, lenders
-              have their own agendas, and buyers are often left comparing deals without the full picture.
+              have their own agendas, and buyers are often left comparing options without the full picture.
               Our mission is to change that.
             </p>
             <p className="text-slate leading-relaxed mb-10">
-              We provide free, no-obligation tools — including detailed finance calculators, side-by-side
-              comparisons, and expert guides — so that you can make an informed decision before speaking
-              to a single salesperson. When you are ready, we connect you with FCA-regulated finance
-              partners who compete for your business, ensuring you receive the most competitive offer
-              available.
+              We provide free tools — including detailed finance calculators, side-by-side
+              comparisons, and expert guides — so that you can understand your options and make an
+              informed decision before approaching any dealer or lender directly.
             </p>
 
-            <h2 className="text-2xl font-display text-charcoal mb-4">How It Works</h2>
+            <h2 className="text-2xl font-display text-charcoal mb-4">How to Use This Site</h2>
             <div className="space-y-6 mb-10">
               <div className="flex gap-4">
                 <div className="shrink-0 w-10 h-10 rounded-full bg-cream flex items-center justify-center text-sm font-display text-racing-green">
@@ -85,10 +82,10 @@ export default function AboutPage() {
                   2
                 </div>
                 <div>
-                  <h3 className="font-semibold text-charcoal mb-1">Request a Free Quote</h3>
+                  <h3 className="font-semibold text-charcoal mb-1">Read Our Guides</h3>
                   <p className="text-sm text-slate leading-relaxed">
-                    Submit your details through our secure form. There is no credit check at this stage and
-                    absolutely no obligation. We simply need to understand your requirements.
+                    Explore our detailed guides covering each finance type, tips for getting the best deal,
+                    and model-specific information to help you decide which option works for your situation.
                   </p>
                 </div>
               </div>
@@ -97,10 +94,10 @@ export default function AboutPage() {
                   3
                 </div>
                 <div>
-                  <h3 className="font-semibold text-charcoal mb-1">Compare Real Offers</h3>
+                  <h3 className="font-semibold text-charcoal mb-1">Approach Dealers and Lenders Informed</h3>
                   <p className="text-sm text-slate leading-relaxed">
-                    Our finance specialists match your requirements with suitable lenders and present you
-                    with real, personalised offers. You compare them and choose the best one — or walk away.
+                    Armed with a clear understanding of finance structures and estimated costs, you will be
+                    in a stronger position when speaking to dealers or lenders directly.
                   </p>
                 </div>
               </div>
@@ -108,14 +105,14 @@ export default function AboutPage() {
 
             <h2 className="text-2xl font-display text-charcoal mb-4">Our Expertise</h2>
             <p className="text-slate leading-relaxed mb-6">
-              We specialise exclusively in finance for Range Rover, Land Rover and Defender vehicles. This
+              We focus exclusively on finance information for Range Rover, Land Rover and Defender vehicles. This
               focused expertise means we understand the nuances of financing premium SUVs — from the impact
               of strong residual values on PCP deals to the tax advantages of PHEV models for business users.
             </p>
             <p className="text-slate leading-relaxed mb-6">
-              Our content is written by automotive finance professionals, not copywriters. Every calculator,
-              guide and comparison on this site reflects real industry knowledge and practical experience
-              helping buyers just like you.
+              Our content is written by automotive finance professionals with practical industry experience.
+              Every calculator, guide and comparison on this site reflects real knowledge built over years
+              of working in vehicle finance.
             </p>
             <p className="text-slate leading-relaxed mb-10">
               We regularly update our tools and content to reflect current market conditions, ensuring the
@@ -125,24 +122,24 @@ export default function AboutPage() {
             <h2 className="text-2xl font-display text-charcoal mb-4">Important Disclaimer</h2>
             <div className="bg-cream rounded-lg p-6 mb-6">
               <p className="text-sm text-slate leading-relaxed mb-3">
-                Range Rover Finance is an independent service and is not affiliated with, endorsed by, or
+                Range Rover Finance is an independent information resource and is not affiliated with, endorsed by, or
                 connected to Jaguar Land Rover Limited (JLR) or any of its subsidiaries. The names Range
                 Rover, Land Rover, Defender, Discovery, Evoque and Velar are registered trademarks of
                 Jaguar Land Rover Limited.
               </p>
               <p className="text-sm text-slate leading-relaxed">
-                We act as a credit broker, not a lender. All finance is subject to status and is provided
-                by FCA-regulated third-party lenders. We may receive a commission from lenders for
-                introductions, but this does not affect the options or rates presented to you.
+                This site provides tools and information for research purposes only. We do not provide
+                financial advice, arrange finance, or act as a lender or credit broker. Always seek
+                independent financial advice before entering into any finance agreement.
               </p>
             </div>
 
             <div className="text-center mt-12">
               <Link
-                href="/apply"
+                href="/calculator"
                 className="inline-block px-10 py-4 bg-racing-green text-white font-semibold rounded-lg hover:bg-racing-green-light transition-colors text-lg"
               >
-                Get Your Free Quote
+                Try Our Free Calculator
               </Link>
             </div>
           </div>

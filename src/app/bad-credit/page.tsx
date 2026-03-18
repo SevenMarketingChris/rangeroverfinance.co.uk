@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTASection } from "@/components/CTASection";
 import { FAQSection } from "@/components/FAQSection";
+import { BreadcrumbSchema, FAQSchema } from "@/components/SchemaMarkup";
 import { formatCurrency } from "@/lib/models";
 
 export const metadata: Metadata = {
@@ -64,6 +65,9 @@ const faqs = [
 export default function BadCreditPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Bad Credit Finance", url: "https://www.rangeroverfinance.co.uk/bad-credit" }]} />
+      <FAQSchema faqs={faqs} />
+
       {/* Hero Section */}
       <section className="relative bg-racing-green-dark overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-racing-green-dark via-racing-green to-racing-green-light opacity-90" />
@@ -173,11 +177,10 @@ export default function BadCreditPage() {
               credit behaviour (are things improving or getting worse?).
             </p>
             <p>
-              Working with a specialist broker who has relationships with these lenders can be highly beneficial.
-              A broker can assess your circumstances, identify the most suitable lenders, and present your
-              application in the best possible light — all without multiple hard credit searches that would
-              further damage your score. Many specialist brokers use initial soft searches to gauge eligibility
-              before proceeding with a formal application.
+              When searching for finance with impaired credit, it is worth researching specialist lenders who
+              may consider your circumstances. Comparing offers from multiple providers — ideally using
+              soft-search eligibility checks first — helps you find the best available terms without
+              further damaging your score through multiple hard credit searches.
             </p>
 
             <h3 className="text-2xl font-display text-charcoal mt-10 mb-4">
@@ -309,10 +312,10 @@ export default function BadCreditPage() {
 
       {/* CTA */}
       <CTASection
-        title="Check Your Eligibility with a Soft Search"
-        description="Our initial assessment uses a soft credit search only — no impact on your credit score. Find out your options with no obligation and no risk."
-        buttonText="Check My Eligibility"
-        buttonHref="/apply"
+        title="Estimate Your Finance Payments"
+        description="Use our free calculator to explore monthly payment estimates for different Range Rover models at various price points and deposit levels."
+        buttonText="Use Calculator"
+        buttonHref="/calculator"
       />
     </>
   );

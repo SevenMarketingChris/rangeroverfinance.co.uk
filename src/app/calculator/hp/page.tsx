@@ -157,8 +157,8 @@ export default function HPCalculatorPage() {
       <FAQSection faqs={faqs} />
 
       <CTASection
-        title="Ready for an HP Quote?"
-        description="Get a personalised Hire Purchase quote for any Range Rover model. Fixed payments, full ownership, no balloon."
+        title="Explore More Finance Tools"
+        description="Compare Hire Purchase costs for any Range Rover model. Fixed payments, full ownership, no balloon payment."
       />
     </>
   );

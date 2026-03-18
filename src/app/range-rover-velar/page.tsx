@@ -139,7 +139,7 @@ const faqs = [
   {
     question: "What are the total running costs of a 2026 Velar alongside finance payments?",
     answer:
-      "Beyond the monthly finance instalment, 2026 Velar running costs include insurance (groups 34-43, typically £600-£1,500 per year depending on your profile), fuel costs (31-130 mpg depending on powertrain choice), and servicing at approximately £400-£600 annually if you take out a Land Rover service plan. Road tax (VED) varies by emissions, with the PHEV attracting lower first-year rates. You can bundle servicing and maintenance into your finance package for a single predictable monthly outgoing. The D200 diesel offers the best fuel economy for high-mileage drivers at 41-44 mpg, while the P400e PHEV delivers the lowest running costs for shorter commutes driven predominantly on electric power.",
+      "Beyond the monthly finance instalment, 2026 Velar running costs include insurance (groups 34-43, typically £600-£1,500 per year depending on your profile), fuel costs (31-130 mpg depending on powertrain choice), and servicing at approximately £400-£600 annually if you take out a Land Rover service plan. Road tax (VED) varies by emissions, with the PHEV attracting lower first-year rates. Some finance agreements allow servicing and maintenance to be bundled into the monthly payment. The D200 diesel offers the best fuel economy for high-mileage drivers at 41-44 mpg, while the P400e PHEV delivers the lowest running costs for shorter commutes driven predominantly on electric power.",
   },
 ];
 
@@ -169,13 +169,13 @@ export default function RangeRoverVelarPage() {
                 2026 {model.name} Finance
               </h1>
               <p className="mt-3 text-xl text-sand font-display">
-                The most design-focused Range Rover. Avant-garde luxury, financed to suit you.
+                The most design-focused Range Rover. Avant-garde luxury meets capability.
               </p>
               <p className="mt-6 text-lg text-white/80 leading-relaxed max-w-2xl">
-                Finance the 2026 Range Rover Velar from {formatCurrency(model.typicalMonthly)} per
+                Estimated monthly payments from {formatCurrency(model.typicalMonthly)} per
                 month. With its award-winning minimalist interior, flush deployable door handles, and
                 a silhouette that sits between the Evoque and Sport, the 2026 Velar is the design
-                statement of the Range Rover family. Explore PCP, HP, and lease options below.
+                statement of the Range Rover family. Compare PCP, HP, and lease costs below.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
@@ -189,17 +189,10 @@ export default function RangeRoverVelarPage() {
                   </p>
                 </div>
                 <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
-                  <p className="text-sm text-white/60 uppercase tracking-wider">Deposit</p>
-                  <p className="text-2xl font-bold text-white">{formatCurrency(model.typicalDeposit)}</p>
-                </div>
-                <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
                   <p className="text-sm text-white/60 uppercase tracking-wider">Typical APR</p>
                   <p className="text-2xl font-bold text-white">{model.typicalApr}%</p>
                 </div>
               </div>
-              <p className="mt-3 text-xs text-white/50">
-                Representative example: {formatCurrency(model.typicalMonthly)}/mo with {formatCurrency(model.typicalDeposit)} deposit, {model.typicalTerm} months at {model.typicalApr}% APR. Finance subject to status.
-              </p>
             </div>
             <div className="model-hero-stage">
               <div className="model-hero-glow" />
@@ -642,8 +635,8 @@ export default function RangeRoverVelarPage() {
             </div>
           </div>
           <p className="text-xs text-slate text-center mt-6">
-            Representative examples only. Actual rates depend on individual circumstances and credit
-            profile. Figures based on a 2026 {model.name} priced from{" "}
+            Illustrative figures only. Actual rates depend on individual circumstances and credit
+            profile. Use our calculator to estimate payments for a 2026 {model.name} priced from{" "}
             {formatCurrency(model.priceFrom)}.
           </p>
         </div>
@@ -656,7 +649,7 @@ export default function RangeRoverVelarPage() {
             2026 {model.name} Finance Calculator
           </h2>
           <p className="text-slate text-center mb-10 max-w-2xl mx-auto">
-            Model your ideal 2026 Velar finance package. Adjust the vehicle price to reflect your
+            Estimate your 2026 Velar monthly costs. Adjust the vehicle price to reflect your
             chosen trim and powertrain, set your deposit, term, and APR to see how different
             configurations affect your monthly commitment.
           </p>
@@ -975,10 +968,10 @@ export default function RangeRoverVelarPage() {
 
       {/* CTA */}
       <CTASection
-        title="Ready to Finance Your 2026 Range Rover Velar?"
-        description="Explore PCP, HP and lease options for the avant-garde 2026 Range Rover Velar. Free, no-obligation quotes tailored to your chosen trim and powertrain."
-        buttonText="Get Your Free Quote"
-        buttonHref="/apply"
+        title="Explore 2026 Range Rover Velar Finance Options"
+        description="Compare PCP, HP and lease costs for the 2026 Range Rover Velar across all trims and powertrains with our finance calculator."
+        buttonText="Use Calculator"
+        buttonHref="/calculator"
       />
     </>
   );

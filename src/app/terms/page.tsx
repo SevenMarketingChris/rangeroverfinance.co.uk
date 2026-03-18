@@ -4,7 +4,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 export const metadata: Metadata = {
   title: "Terms and Conditions | Range Rover Finance",
   description:
-    "Terms and conditions for using the Range Rover Finance website. Please read these terms carefully before using our site, calculators and services.",
+    "Terms and conditions for using the Range Rover Finance website. Please read these terms carefully before using our site and calculators.",
 };
 
 export default function TermsPage() {
@@ -39,13 +39,15 @@ export default function TermsPage() {
             <div>
               <h2 className="text-xl font-display text-charcoal mb-3">2. Site Purpose</h2>
               <p className="mb-3">
-                The Site is provided for informational purposes only. It is designed to help users understand
-                and compare vehicle finance options for Range Rover, Land Rover and Defender vehicles.
+                The Site provides information and tools for research purposes only. It is designed to help
+                users understand and compare vehicle finance options for Range Rover, Land Rover and
+                Defender vehicles. We do not provide financial advice or arrange finance.
               </p>
               <p className="mb-3">
                 <strong className="text-charcoal">The information on this Site does not constitute financial advice.</strong>{" "}
-                We are not authorised to provide regulated financial advice, and nothing on this Site should
-                be interpreted as a recommendation to enter into any particular finance agreement.
+                Nothing on this Site should be interpreted as a recommendation to enter into any particular
+                finance agreement. If you wish to obtain vehicle finance, you should approach lenders,
+                dealers, or FCA-authorised brokers directly.
               </p>
               <p>
                 You should seek independent financial advice from a qualified adviser before making any
@@ -96,15 +98,11 @@ export default function TermsPage() {
             </div>
 
             <div>
-              <h2 className="text-xl font-display text-charcoal mb-3">5. Credit Broker Status</h2>
-              <p className="mb-3">
-                Range Rover Finance acts as a credit broker, not a lender. We do not provide finance
-                directly. When you submit an enquiry through our Site, we may introduce you to FCA-regulated
-                third-party finance brokers and lenders.
-              </p>
+              <h2 className="text-xl font-display text-charcoal mb-3">5. No Finance Services</h2>
               <p>
-                We may receive a commission or fee from these third parties for successful introductions.
-                This does not affect the price you pay or the terms offered to you.
+                Range Rover Finance does not provide finance, arrange finance agreements, or act as a
+                credit broker or intermediary. Our calculators and tools are provided for estimation and
+                research purposes only. Calculator results are not finance offers or quotations.
               </p>
             </div>
 

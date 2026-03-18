@@ -44,7 +44,7 @@ const faqs = [
   {
     question: "Do I have to use the same finance company as the dealer?",
     answer:
-      "No. While dealers will typically offer finance through their manufacturer's captive finance company (such as Land Rover Financial Services), you are free to arrange finance independently through a bank, building society, or specialist broker. Comparing multiple offers is always advisable — our finance specialists can search the whole market on your behalf.",
+      "No. While dealers will typically offer finance through their manufacturer's captive finance company (such as Land Rover Financial Services), you are free to arrange finance independently through a bank, building society, or specialist broker. Comparing multiple offers is always advisable to ensure you get the best rate and terms.",
   },
   {
     question: "What excess mileage charges should I expect on a Range Rover PCP?",
@@ -388,8 +388,10 @@ export default function PCPExplained() {
       <FAQSection faqs={faqs} />
 
       <CTASection
-        title="Ready to Explore PCP for Your Range Rover?"
-        description="Our specialists compare PCP deals from across the market to find the best rate and terms for your circumstances."
+        title="Estimate Your PCP Payments"
+        description="Use our free calculator to explore PCP monthly payment estimates for different Range Rover models, deposits and terms."
+        buttonText="Use Calculator"
+        buttonHref="/calculator"
       />
     </>
   );

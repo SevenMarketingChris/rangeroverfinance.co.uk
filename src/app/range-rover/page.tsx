@@ -72,7 +72,7 @@ export default function RangeRoverPage() {
                 2026 {model.name} Finance
               </h1>
               <p className="mt-3 text-xl text-sand font-display">
-                The definitive luxury SUV. Compare PCP, HP and lease deals on the 2026 model year Range Rover.
+                The definitive luxury SUV. Research PCP, HP and lease costs for the 2026 model year Range Rover.
               </p>
               <p className="mt-6 text-lg text-white/80 leading-relaxed max-w-2xl">
                 {model.heroDescription}
@@ -87,17 +87,10 @@ export default function RangeRoverPage() {
                   <p className="text-2xl font-bold text-sand">{formatCurrency(model.typicalMonthly)}/mo</p>
                 </div>
                 <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
-                  <p className="text-sm text-white/60 uppercase tracking-wider">Deposit</p>
-                  <p className="text-2xl font-bold text-white">{formatCurrency(model.typicalDeposit)}</p>
-                </div>
-                <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
                   <p className="text-sm text-white/60 uppercase tracking-wider">Typical APR</p>
                   <p className="text-2xl font-bold text-white">{model.typicalApr}%</p>
                 </div>
               </div>
-              <p className="mt-3 text-xs text-white/50">
-                Representative example: {formatCurrency(model.typicalMonthly)}/mo with {formatCurrency(model.typicalDeposit)} deposit, {model.typicalTerm} months at {model.typicalApr}% APR. Finance subject to status.
-              </p>
             </div>
             <div className="model-hero-stage">
               <div className="model-hero-glow" />
@@ -700,8 +693,7 @@ export default function RangeRoverPage() {
             </div>
           </div>
           <p className="text-xs text-slate text-center mt-6">
-            Representative examples only. Actual rates depend on individual circumstances and credit profile. Figures based on
-            a 2026 {model.name} priced from {formatCurrency(model.priceFrom)}.
+            Illustrative figures only. Actual rates depend on individual circumstances and credit profile. Use our calculator to estimate payments for a 2026 {model.name} priced from {formatCurrency(model.priceFrom)}.
           </p>
         </div>
       </section>
@@ -1018,10 +1010,10 @@ export default function RangeRoverPage() {
 
       {/* CTA */}
       <CTASection
-        title="Ready to Finance Your 2026 Range Rover?"
-        description="Speak to our specialists about PCP, HP and lease options for the 2026 Range Rover. Free, no-obligation quotes tailored to your budget across all trims from SE to SV."
-        buttonText="Get Your Free Quote"
-        buttonHref="/apply"
+        title="Explore 2026 Range Rover Finance Options"
+        description="Use our calculator to compare PCP, HP and lease costs for the 2026 Range Rover across all trims from SE to SV."
+        buttonText="Use Calculator"
+        buttonHref="/calculator"
       />
     </>
   );

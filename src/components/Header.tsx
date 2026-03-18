@@ -73,10 +73,10 @@ export function Header() {
               GUIDES
             </Link>
             <Link
-              href="/apply"
+              href="/calculator"
               className="ml-6 px-7 py-2 border border-white/20 text-[11px] tracking-[0.2em] text-white hover:bg-white hover:text-rr-black transition-all duration-300"
             >
-              GET A QUOTE
+              CALCULATOR
             </Link>
           </nav>
 
@@ -115,11 +115,11 @@ export function Header() {
             </Link>
             <div className="pt-4">
               <Link
-                href="/apply"
+                href="/calculator"
                 onClick={() => setMobileOpen(false)}
                 className="block py-3 border border-white/20 text-[11px] tracking-[0.2em] text-white text-center hover:bg-white hover:text-rr-black transition-all"
               >
-                GET A QUOTE
+                CALCULATOR
               </Link>
             </div>
           </div>

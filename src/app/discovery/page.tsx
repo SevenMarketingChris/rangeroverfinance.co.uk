@@ -19,7 +19,7 @@ const faqs = [
     question:
       "How much does it cost to finance a 2026 Land Rover Discovery per month?",
     answer:
-      "Monthly payments for the 2026 Discovery start from around £550-£650 on a PCP agreement, depending on the trim level, deposit, term length, and annual mileage. A Discovery S with a 10% deposit over 48 months at a representative APR typically comes in around £600 per month. HP payments are higher because you are paying off the full value, but you own the car outright at the end. Lease payments tend to be the lowest monthly option as you are only paying for the depreciation during the contract period. We compare all three structures to find the best fit for your budget.",
+      "Monthly payments for the 2026 Discovery start from around £550-£650 on a PCP agreement, depending on the trim level, deposit, term length, and annual mileage. A Discovery S with a 10% deposit over 48 months at a typical APR comes in around £600 per month. HP payments are higher because you are paying off the full value, but you own the car outright at the end. Lease payments tend to be the lowest monthly option as you are only paying for the depreciation during the contract period. Our calculator lets you compare all three structures side by side.",
   },
   {
     question:
@@ -76,16 +76,16 @@ export default function DiscoveryPage() {
                 2026 {model.fullName} Finance
               </h1>
               <p className="mt-3 text-xl text-sand font-display">
-                The ultimate premium 7-seat family SUV — now available on PCP, HP
-                and lease
+                The ultimate premium 7-seat family SUV — compare PCP, HP
+                and lease costs
               </p>
               <p className="mt-6 text-lg text-white/80 leading-relaxed max-w-2xl">
-                Finance the 2026 Land Rover Discovery (L462) from{" "}
-                {formatCurrency(model.priceFrom)} with flexible monthly payments.
+                The 2026 Land Rover Discovery (L462) starts from{" "}
+                {formatCurrency(model.priceFrom)} with estimated monthly payments shown below.
                 Seven genuine adult-sized seats, 3,500 kg towing capacity, and
                 Land Rover's legendary off-road capability make the Discovery the
-                most versatile premium SUV on sale. Compare PCP, HP and lease
-                options to find the right deal for your family.
+                most versatile premium SUV on sale. Use our calculator to compare PCP, HP and lease
+                costs for your chosen specification.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
@@ -105,10 +105,6 @@ export default function DiscoveryPage() {
                   </p>
                 </div>
                 <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
-                  <p className="text-sm text-white/60 uppercase tracking-wider">Deposit</p>
-                  <p className="text-2xl font-bold text-white">{formatCurrency(model.typicalDeposit)}</p>
-                </div>
-                <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
                   <p className="text-sm text-white/60 uppercase tracking-wider">
                     Typical APR
                   </p>
@@ -123,9 +119,6 @@ export default function DiscoveryPage() {
                   <p className="text-2xl font-bold text-white">7</p>
                 </div>
               </div>
-              <p className="mt-3 text-xs text-white/50">
-                Representative example: {formatCurrency(model.typicalMonthly)}/mo with {formatCurrency(model.typicalDeposit)} deposit, {model.typicalTerm} months at {model.typicalApr}% APR. Finance subject to status.
-              </p>
             </div>
             <div className="model-hero-stage">
               <div className="model-hero-glow" />
@@ -872,8 +865,8 @@ export default function DiscoveryPage() {
             </div>
           </div>
           <p className="text-xs text-slate text-center mt-6">
-            Representative examples only. Actual rates depend on individual
-            circumstances and credit profile. Figures based on a 2026{" "}
+            Illustrative figures only. Actual rates depend on individual
+            circumstances and credit profile. Use our calculator to estimate payments for a 2026{" "}
             {model.fullName} priced from {formatCurrency(model.priceFrom)}.
           </p>
         </div>
@@ -1195,10 +1188,10 @@ export default function DiscoveryPage() {
 
       {/* CTA */}
       <CTASection
-        title="Ready to Finance Your 2026 Land Rover Discovery?"
-        description="Get a free, no-obligation quote for the ultimate premium 7-seat family SUV. PCP, HP and lease options available for all 2026 Discovery trims and powertrains."
-        buttonText="Get Your Free Quote"
-        buttonHref="/apply"
+        title="Explore 2026 Discovery Finance Options"
+        description="Use our calculator to compare PCP, HP and lease costs for the ultimate premium 7-seat family SUV across all 2026 Discovery trims."
+        buttonText="Use Calculator"
+        buttonHref="/calculator"
       />
     </>
   );

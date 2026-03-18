@@ -397,10 +397,10 @@ export default function ComparePage() {
 
           <div className="mt-10 text-center">
             <Link
-              href="/apply"
+              href="/calculator"
               className="inline-block px-10 py-4 bg-racing-green text-white font-semibold rounded-lg hover:bg-racing-green-light transition-colors text-lg"
             >
-              Get Your Free Quote
+              Use Calculator
             </Link>
           </div>
         </div>

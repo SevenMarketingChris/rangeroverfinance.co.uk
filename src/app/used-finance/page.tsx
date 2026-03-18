@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTASection } from "@/components/CTASection";
 import { FAQSection } from "@/components/FAQSection";
+import { BreadcrumbSchema, FAQSchema } from "@/components/SchemaMarkup";
 import { models, formatCurrency } from "@/lib/models";
 
 export const metadata: Metadata = {
@@ -74,6 +75,9 @@ const faqs = [
 export default function UsedFinancePage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Used Finance", url: "https://www.rangeroverfinance.co.uk/used-finance" }]} />
+      <FAQSchema faqs={faqs} />
+
       {/* Hero Section */}
       <section className="relative bg-racing-green-dark overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-racing-green-dark via-racing-green to-racing-green-light opacity-90" />
@@ -136,7 +140,7 @@ export default function UsedFinancePage() {
               Crucially, approved used vehicles often qualify for JLR&apos;s own finance offers, which can be more
               competitive than third-party used vehicle finance. Manufacturer-backed PCP and HP deals on approved
               used stock may offer lower APRs, deposit contributions, and more favourable terms than you would find
-              through an independent broker or bank loan. The combination of manufacturer warranty, certified
+              through independent finance providers. The combination of manufacturer warranty, certified
               quality, and competitive finance makes the approved used programme an attractive proposition.
             </p>
 
@@ -316,10 +320,10 @@ export default function UsedFinancePage() {
 
       {/* CTA */}
       <CTASection
-        title="Ready to Finance a Used Range Rover?"
-        description="Get a free, no-obligation quote for used Range Rover finance. Our specialists can source competitive PCP and HP deals on approved used and independently sourced vehicles."
-        buttonText="Get Your Used Finance Quote"
-        buttonHref="/apply"
+        title="Estimate Used Range Rover Payments"
+        description="Use our free calculator to explore monthly payment estimates for used Range Rovers at any price point. Simply adjust the vehicle price to match the used value you are considering."
+        buttonText="Use Calculator"
+        buttonHref="/calculator"
       />
     </>
   );

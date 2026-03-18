@@ -378,8 +378,8 @@ export default function DepositGuide() {
 
       <CTASection
         title="Work Out Your Ideal Deposit"
-        description="Use our finance calculator to see how different deposit amounts affect your monthly payments, or speak to our specialists for personalised advice."
-        buttonText="Try the Calculator"
+        description="Use our finance calculator to see how different deposit amounts affect your monthly payments across PCP, HP and lease options."
+        buttonText="Use Calculator"
         buttonHref="/calculator"
       />
     </>

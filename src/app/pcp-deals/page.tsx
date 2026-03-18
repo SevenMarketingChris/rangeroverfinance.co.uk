@@ -4,6 +4,7 @@ import { FinanceCalculator } from "@/components/FinanceCalculator";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTASection } from "@/components/CTASection";
 import { FAQSection } from "@/components/FAQSection";
+import { BreadcrumbSchema, FAQSchema } from "@/components/SchemaMarkup";
 import { models, formatCurrency } from "@/lib/models";
 
 export const metadata: Metadata = {
@@ -65,6 +66,9 @@ const faqs = [
 export default function PCPDealsPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "PCP Deals", url: "https://www.rangeroverfinance.co.uk/pcp-deals" }]} />
+      <FAQSchema faqs={faqs} />
+
       {/* Hero Section */}
       <section className="relative bg-racing-green-dark overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-racing-green-dark via-racing-green to-racing-green-light opacity-90" />
@@ -224,7 +228,7 @@ export default function PCPDealsPage() {
             </table>
           </div>
           <p className="mt-4 text-xs text-slate text-center">
-            Figures shown are representative examples for illustration purposes only. Actual quotes will vary based on
+            Figures shown are representative examples for illustration purposes only. Actual rates and payments will vary based on
             specification, options, credit profile and lender criteria.
           </p>
         </div>
@@ -259,10 +263,10 @@ export default function PCPDealsPage() {
 
       {/* CTA */}
       <CTASection
-        title="Ready to Compare PCP Deals?"
-        description="Get a free, no-obligation PCP quote tailored to your chosen Range Rover model. Our finance specialists will find the most competitive deal for your circumstances."
-        buttonText="Get Your PCP Quote"
-        buttonHref="/apply"
+        title="Estimate Your PCP Payments"
+        description="Use our free calculator to compare PCP monthly payments across different Range Rover models, deposits and terms."
+        buttonText="Use Calculator"
+        buttonHref="/calculator"
       />
     </>
   );

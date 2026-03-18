@@ -50,7 +50,7 @@ const homepageFaqs = [
   {
     question: "Are the calculator results an actual finance quote?",
     answer:
-      "No, our calculator provides estimates to help you understand approximate monthly payments and total costs. Actual finance quotes depend on your individual circumstances, credit profile, the specific vehicle, and lender criteria at the time of application. Use the calculator as a guide, then request a personalised no-obligation quote.",
+      "No, our calculator provides estimates to help you understand approximate monthly payments and total costs. Actual finance terms depend on your individual circumstances, credit profile, the specific vehicle, and lender criteria. Use the calculator as a research tool to compare options and understand what different finance structures might cost before approaching lenders or dealers directly.",
   },
 ];
 
@@ -80,21 +80,21 @@ export default function HomePage() {
                 Finance
               </h1>
               <p className="mt-8 text-[15px] text-white/40 leading-relaxed max-w-lg">
-                Compare PCP, HP and lease deals across the complete Range Rover
-                and Land Rover lineup. Free calculator. No obligation.
+                Compare PCP, HP and lease options across the complete Range Rover
+                and Land Rover lineup. Free calculator and guides.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/calculator"
                   className="inline-flex items-center justify-center px-10 py-4 bg-white text-rr-black text-[11px] tracking-[0.25em] uppercase hover:bg-rr-frost transition-colors duration-300"
                 >
-                  Calculate Payment
+                  Use Calculator
                 </Link>
                 <Link
-                  href="/apply"
+                  href="/guides"
                   className="inline-flex items-center justify-center px-10 py-4 border border-white/15 text-white text-[11px] tracking-[0.25em] uppercase hover:bg-white/5 transition-all duration-300"
                 >
-                  Get a Quote
+                  Read Guides
                 </Link>
               </div>
 
@@ -182,9 +182,9 @@ export default function HomePage() {
               },
               {
                 step: "03",
-                title: "Get Your Quote",
+                title: "Compare Options",
                 description:
-                  "Request a personalised, no-obligation quote. No impact on your credit score.",
+                  "Review PCP, HP and lease side by side. Use our guides to understand which option suits you best.",
               },
             ].map((item) => (
               <div key={item.step} className="text-center px-8 lg:px-12 py-8 md:py-0">
@@ -209,8 +209,8 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-rr-mist">
             {[
               {
-                title: "No Obligation",
-                description: "Personalised quotes without commitment. Soft credit check only.",
+                title: "Completely Free",
+                description: "All our tools, calculators and guides are free to use with no sign-up required.",
               },
               {
                 title: "All Finance Types",
@@ -221,8 +221,8 @@ export default function HomePage() {
                 description: "Full coverage from the Evoque to the flagship Range Rover.",
               },
               {
-                title: "Expert Guidance",
-                description: "Clear, honest guidance to help you make the right decision.",
+                title: "In-Depth Guides",
+                description: "Clear, detailed guides to help you understand every finance option.",
               },
             ].map((feature) => (
               <div key={feature.title} className="bg-white p-10 text-center">
@@ -235,7 +235,12 @@ export default function HomePage() {
       </section>
 
       <FAQSection title="Frequently Asked Questions" faqs={homepageFaqs} />
-      <CTASection />
+      <CTASection
+        title="Ready to Research Your Finance Options?"
+        description="Try our free calculator to estimate monthly payments across PCP, HP and lease."
+        buttonText="Use Calculator"
+        buttonHref="/calculator"
+      />
     </>
   );
 }

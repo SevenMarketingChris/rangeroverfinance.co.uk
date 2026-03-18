@@ -73,12 +73,12 @@ export default function DefenderPage() {
                 {model.fullName} Finance
               </h1>
               <p className="mt-3 text-xl text-sand font-display">
-                The unstoppable icon. Compare PCP, HP and lease deals on the 2026 Defender 90, 110, 130 and OCTA.
+                The unstoppable icon. Research PCP, HP and lease costs for the 2026 Defender 90, 110, 130 and OCTA.
               </p>
               <p className="mt-6 text-lg text-white/80 leading-relaxed max-w-2xl">
                 The 2026 Land Rover Defender is the most capable and desirable Defender ever built.
                 From the nimble 2-door 90 to the 8-seat 130, and now crowned by the 635 PS OCTA,
-                there is a Defender for every ambition. Finance one from {formatCurrency(model.typicalMonthly)}/month.
+                there is a Defender for every ambition. Estimated monthly payments from {formatCurrency(model.typicalMonthly)}/month.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
@@ -90,10 +90,6 @@ export default function DefenderPage() {
                   <p className="text-2xl font-bold text-sand">{formatCurrency(model.typicalMonthly)}/mo</p>
                 </div>
                 <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
-                  <p className="text-sm text-white/60 uppercase tracking-wider">Deposit</p>
-                  <p className="text-2xl font-bold text-white">{formatCurrency(model.typicalDeposit)}</p>
-                </div>
-                <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
                   <p className="text-sm text-white/60 uppercase tracking-wider">Typical APR</p>
                   <p className="text-2xl font-bold text-white">{model.typicalApr}%</p>
                 </div>
@@ -102,9 +98,6 @@ export default function DefenderPage() {
                   <p className="text-2xl font-bold text-white">90 / 110 / 130</p>
                 </div>
               </div>
-              <p className="mt-3 text-xs text-white/50">
-                Representative example: {formatCurrency(model.typicalMonthly)}/mo with {formatCurrency(model.typicalDeposit)} deposit, {model.typicalTerm} months at {model.typicalApr}% APR. Finance subject to status.
-              </p>
             </div>
             <div className="model-hero-stage">
               <div className="model-hero-glow" />
@@ -154,7 +147,7 @@ export default function DefenderPage() {
               the premium SUV market. Its residual values are among the strongest of any vehicle on
               sale, which directly translates to lower PCP monthly payments relative to the vehicle's
               list price. Combined with the choice of three body styles, seven powertrains, and eight
-              trim levels, there is a 2026 Defender configuration -- and a finance deal -- for virtually
+              trim levels, there is a 2026 Defender configuration for virtually
               every requirement and budget.
             </p>
           </div>
@@ -830,8 +823,7 @@ export default function DefenderPage() {
             </div>
           </div>
           <p className="text-xs text-slate text-center mt-6">
-            Representative examples only. Actual rates depend on individual circumstances and credit profile. Figures based on
-            a 2026 {model.fullName} 110 priced from {formatCurrency(model.priceFrom)}.
+            Illustrative figures only. Actual rates depend on individual circumstances and credit profile. Use our calculator to estimate payments for a 2026 {model.fullName} 110 priced from {formatCurrency(model.priceFrom)}.
           </p>
         </div>
       </section>
@@ -1158,10 +1150,10 @@ export default function DefenderPage() {
 
       {/* CTA */}
       <CTASection
-        title="Ready to Finance Your 2026 Land Rover Defender?"
-        description="Join the thousands of Defender owners who finance their icon. Free, no-obligation quotes for the 2026 Defender 90, 110, 130 and OCTA across PCP, HP and lease."
-        buttonText="Get Your Free Quote"
-        buttonHref="/apply"
+        title="Explore 2026 Defender Finance Options"
+        description="Use our calculator to compare PCP, HP and lease costs for the 2026 Defender 90, 110, 130 and OCTA across all trims."
+        buttonText="Use Calculator"
+        buttonHref="/calculator"
       />
     </>
   );

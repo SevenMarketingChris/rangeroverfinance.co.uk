@@ -4,6 +4,7 @@ import { FinanceCalculator } from "@/components/FinanceCalculator";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTASection } from "@/components/CTASection";
 import { FAQSection } from "@/components/FAQSection";
+import { BreadcrumbSchema, FAQSchema } from "@/components/SchemaMarkup";
 import { models, formatCurrency } from "@/lib/models";
 
 export const metadata: Metadata = {
@@ -65,6 +66,9 @@ const faqs = [
 export default function HPFinancePage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "HP Finance", url: "https://www.rangeroverfinance.co.uk/hp-finance" }]} />
+      <FAQSchema faqs={faqs} />
+
       {/* Hero Section */}
       <section className="relative bg-racing-green-dark overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-racing-green-dark via-racing-green to-racing-green-light opacity-90" />
@@ -222,7 +226,7 @@ export default function HPFinancePage() {
             </table>
           </div>
           <p className="mt-4 text-xs text-slate text-center">
-            Figures shown are representative examples for illustration purposes only. Actual quotes will vary based on
+            Figures shown are representative examples for illustration purposes only. Actual rates and payments will vary based on
             specification, options, credit profile and lender criteria.
           </p>
         </div>
@@ -325,10 +329,10 @@ export default function HPFinancePage() {
 
       {/* CTA */}
       <CTASection
-        title="Ready to Explore HP Finance?"
-        description="Get a free, no-obligation HP quote for your chosen Range Rover model. Fixed payments, full ownership, no surprises."
-        buttonText="Get Your HP Quote"
-        buttonHref="/apply"
+        title="Estimate Your HP Payments"
+        description="Use our free calculator to compare HP monthly payments across different Range Rover models, deposits and terms."
+        buttonText="Use Calculator"
+        buttonHref="/calculator"
       />
     </>
   );

@@ -374,11 +374,11 @@ export default function PCPvsHP() {
                   whether the flexibility of PCP or the simplicity of HP better matches your temperament.
                 </p>
                 <p>
-                  If you are still unsure,{" "}
-                  <Link href="/apply" className="text-racing-green underline hover:text-racing-green-light">
-                    get in touch with our finance specialists
+                  If you are still unsure, try our{" "}
+                  <Link href="/calculator" className="text-racing-green underline hover:text-racing-green-light">
+                    finance calculator
                   </Link>{" "}
-                  who can talk you through both options based on your individual circumstances.
+                  to compare PCP and HP payments side by side for your chosen model.
                 </p>
               </div>
             </div>

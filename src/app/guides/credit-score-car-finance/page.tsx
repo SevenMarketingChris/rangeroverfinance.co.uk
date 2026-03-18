@@ -304,10 +304,10 @@ export default function CreditScoreCarFinance() {
                 <p>
                   The smart approach is to use soft-search tools to compare offers and narrow your options, then submit a
                   single full application to the lender whose offer you want to accept. Our{" "}
-                  <Link href="/apply" className="text-racing-green underline hover:text-racing-green-light">
-                    application process
+                  <Link href="/calculator" className="text-racing-green underline hover:text-racing-green-light">
+                    finance calculator
                   </Link>{" "}
-                  uses a soft search initially, so you can explore your options without any impact on your credit score.
+                  can help you estimate payments and compare options before approaching a lender.
                 </p>
               </div>
             </div>
@@ -382,8 +382,10 @@ export default function CreditScoreCarFinance() {
       <FAQSection faqs={faqs} />
 
       <CTASection
-        title="Not Sure Where You Stand?"
-        description="Our finance specialists work with lenders across the credit spectrum. Get a soft-search quote with no impact on your credit score."
+        title="Estimate Your Finance Payments"
+        description="Use our free calculator to explore monthly payment estimates for different Range Rover models, deposits and terms."
+        buttonText="Use Calculator"
+        buttonHref="/calculator"
       />
     </>
   );

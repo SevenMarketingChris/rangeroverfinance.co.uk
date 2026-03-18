@@ -145,8 +145,8 @@ export default function DiscoverySportPage() {
                 The 2026 Discovery Sport (L550) is the entry point to Land Rover ownership — a compact
                 family SUV that seats up to seven, tows 2,500 kg, and wades through 600mm of water, all
                 while fitting comfortably into a supermarket car park. With five powertrains including
-                a plug-in hybrid offering CO2 from just 36 g/km, the Discovery Sport makes premium
-                SUV finance more accessible than ever.
+                a plug-in hybrid offering CO2 from just 36 g/km, the Discovery Sport is one of the
+                most accessible premium SUVs on the market.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
@@ -158,17 +158,10 @@ export default function DiscoverySportPage() {
                   <p className="text-2xl font-bold text-sand">{formatCurrency(model.typicalMonthly)}/mo</p>
                 </div>
                 <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
-                  <p className="text-sm text-white/60 uppercase tracking-wider">Deposit</p>
-                  <p className="text-2xl font-bold text-white">{formatCurrency(model.typicalDeposit)}</p>
-                </div>
-                <div className="bg-white/10 backdrop-blur rounded-lg px-4 py-3">
                   <p className="text-sm text-white/60 uppercase tracking-wider">Typical APR</p>
                   <p className="text-2xl font-bold text-white">{model.typicalApr}%</p>
                 </div>
               </div>
-              <p className="mt-3 text-xs text-white/50">
-                Representative example: {formatCurrency(model.typicalMonthly)}/mo with {formatCurrency(model.typicalDeposit)} deposit, {model.typicalTerm} months at {model.typicalApr}% APR. Finance subject to status.
-              </p>
             </div>
             <div className="model-hero-stage">
               <div className="model-hero-glow" />
@@ -590,8 +583,7 @@ export default function DiscoverySportPage() {
             </div>
           </div>
           <p className="text-xs text-slate text-center mt-6">
-            Representative examples only. Actual rates depend on individual circumstances and credit profile. Figures based on
-            a 2026 {model.fullName} priced from {formatCurrency(model.priceFrom)}.
+            Illustrative figures only. Actual rates depend on individual circumstances and credit profile. Use our calculator to estimate payments for a 2026 {model.fullName} priced from {formatCurrency(model.priceFrom)}.
           </p>
         </div>
       </section>
@@ -897,10 +889,10 @@ export default function DiscoverySportPage() {
 
       {/* CTA */}
       <CTASection
-        title="Ready to Finance Your 2026 Discovery Sport?"
-        description="The most affordable Land Rover is within reach. Get a free, no-obligation finance quote for the 2026 Discovery Sport today."
-        buttonText="Get Your Free Quote"
-        buttonHref="/apply"
+        title="Explore 2026 Discovery Sport Finance Options"
+        description="Use our calculator to compare PCP, HP and lease costs for the most affordable Land Rover in the range."
+        buttonText="Use Calculator"
+        buttonHref="/calculator"
       />
     </>
   );
