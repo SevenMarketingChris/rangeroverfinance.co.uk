@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description:
       "Finance a used Range Rover with competitive PCP and HP deals. Approved used programmes, typical prices and expert guidance.",
     type: "website",
-    url: "https://rangeroverfinance.co.uk/used-finance",
+    url: "https://www.rangeroverfinance.co.uk/used-finance",
   },
 };
 

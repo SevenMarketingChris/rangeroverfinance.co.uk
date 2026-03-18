@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description:
       "Explore Range Rover finance options with bad credit. Specialist lenders, practical advice, and honest guidance on your options.",
     type: "website",
-    url: "https://rangeroverfinance.co.uk/bad-credit",
+    url: "https://www.rangeroverfinance.co.uk/bad-credit",
   },
 };
 

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description:
       "Compare Range Rover PCP deals across all models. Understand how PCP works, balloon payments and your end-of-term options.",
     type: "website",
-    url: "https://rangeroverfinance.co.uk/pcp-deals",
+    url: "https://www.rangeroverfinance.co.uk/pcp-deals",
   },
 };
 

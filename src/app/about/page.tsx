@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description:
       "Free calculators, comparison tools and guides to help you research Range Rover finance options across PCP, HP and lease.",
     type: "website",
-    url: "https://rangeroverfinance.co.uk/about",
+    url: "https://www.rangeroverfinance.co.uk/about",
   },
 };
 

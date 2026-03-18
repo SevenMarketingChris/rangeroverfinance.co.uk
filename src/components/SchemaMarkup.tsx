@@ -5,17 +5,9 @@ export function WebsiteSchema() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Range Rover Finance",
-    url: "https://rangeroverfinance.co.uk",
+    url: "https://www.rangeroverfinance.co.uk",
     description:
       "Compare Range Rover and Land Rover finance deals across PCP, HP and lease options. Free calculator for all models.",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: "https://rangeroverfinance.co.uk/search?q={search_term_string}",
-      },
-      "query-input": "required name=search_term_string",
-    },
   };
   return (
     <script
@@ -30,7 +22,7 @@ export function OrganizationSchema() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Range Rover Finance",
-    url: "https://rangeroverfinance.co.uk",
+    url: "https://www.rangeroverfinance.co.uk",
     description: "UK finance comparison service for Range Rover and Land Rover vehicles.",
     areaServed: "GB",
     serviceType: "Vehicle Finance Comparison",
@@ -83,7 +75,7 @@ export function BreadcrumbSchema({
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://rangeroverfinance.co.uk",
+        item: "https://www.rangeroverfinance.co.uk",
       },
       ...items.map((item, i) => ({
         "@type": "ListItem",
@@ -123,7 +115,7 @@ export function VehicleFinanceSchema({
     provider: {
       "@type": "Organization",
       name: "Range Rover Finance",
-      url: "https://rangeroverfinance.co.uk",
+      url: "https://www.rangeroverfinance.co.uk",
     },
     feesAndCommissionsSpecification: `Representative APR ${apr}%`,
     amount: {

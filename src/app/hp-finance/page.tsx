@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description:
       "Explore Range Rover hire purchase finance. Fixed payments, full ownership, no mileage limits. Compare HP deals across all models.",
     type: "website",
-    url: "https://rangeroverfinance.co.uk/hp-finance",
+    url: "https://www.rangeroverfinance.co.uk/hp-finance",
   },
 };
 

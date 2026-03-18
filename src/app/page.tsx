@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description:
       "Compare Range Rover finance deals across PCP, HP and lease options. Free calculator for all models.",
     type: "website",
-    url: "https://rangeroverfinance.co.uk",
+    url: "https://www.rangeroverfinance.co.uk",
   },
 };
 

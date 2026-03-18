@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description:
       "Compare Range Rover lease deals. Fixed monthly rentals, road tax included, no depreciation risk. Personal and business contract hire options.",
     type: "website",
-    url: "https://rangeroverfinance.co.uk/lease-deals",
+    url: "https://www.rangeroverfinance.co.uk/lease-deals",
   },
 };
 

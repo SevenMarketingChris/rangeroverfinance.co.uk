@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description:
       "Range Rover business finance: BCH, business PCP, VAT recovery, BIK rates, and PHEV tax advantages for company car drivers.",
     type: "website",
-    url: "https://rangeroverfinance.co.uk/business-finance",
+    url: "https://www.rangeroverfinance.co.uk/business-finance",
   },
 };
 
